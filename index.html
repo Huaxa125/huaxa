@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Huaxa125 · AI Builder</title>
+  <meta name="description" content="AI & 自媒体博主，写 AI 应用、算法与内容增长的交叉地带。专注 AI 工具与自媒体增长，在 X 上公开记录构建过程。">
+  <meta name="keywords" content="AI, 自媒体, 内容创作, AI工具, 算法, Huaxa125">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Huaxa125 · AI Builder">
+  <meta property="og:description" content="AI & 自媒体博主，写 AI 应用、算法与内容增长的交叉地带。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huaxa125.com">
+  <meta property="og:image" content="https://huaxa125.com/og.png">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@Huaxa125">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Huaxa125",
+    "alternateName": "Huaxa",
+    "description": "AI & 自媒体博主，专注 AI 应用与算法可见性",
+    "url": "https://huaxa125.com",
+    "sameAs": [
+      "https://x.com/Huaxa125",
+      "https://github.com/Huaxa125"
+    ],
+    "jobTitle": "AI Builder / 自媒体博主",
+    "knowsAbout": ["Artificial Intelligence", "Content Creation", "Algorithm"]
+  }
+  </script>
+
+  <style>
+    /* ════════════════════════════════════════
+       Design Tokens
+       ════════════════════════════════════════ */
+    :root {
+      --bg:            #0B0B12;
+      --surface:       #14141E;
+      --surface-hover: #1B1B28;
+      --border:        #21213A;
+      --border-hover:  #7B6FE8;
+      --accent:        #7B6FE8;
+      --accent-dim:    rgba(123,111,232,.12);
+      --accent-glow:   rgba(123,111,232,.25);
+      --gold:          #E8B94F;
+      --gold-dim:      rgba(232,185,79,.10);
+      --green:         #4ADE80;
+      --green-dim:     rgba(74,222,128,.10);
+      --red-dim:       rgba(239,68,68,.10);
+      --red:           #EF4444;
+      --text-1:        #EDEAF8;
+      --text-2:        #8888AB;
+      --text-3:        #50507A;
+      --radius:        12px;
+      --radius-sm:     8px;
+      --max-w:         720px;
+      --nav-h:         56px;
+    }
+
+    /* ════════════════════════════════════════
+       Reset
+       ════════════════════════════════════════ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:var(--bg);
+      color:var(--text-1);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ul{list-style:none}
+
+    /* ════════════════════════════════════════
+       Layout
+       ════════════════════════════════════════ */
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    .section{padding:64px 0;border-top:1px solid var(--border)}
+
+    /* ════════════════════════════════════════
+       Scroll-reveal (used by JS)
+       ════════════════════════════════════════ */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}
+    .reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}
+
+    /* ════════════════════════════════════════
+       Navigation
+       ════════════════════════════════════════ */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(11,11,18,.80);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      max-width:var(--max-w);margin:0 auto;padding:0 24px;
+      height:var(--nav-h);
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-brand{
+      display:flex;align-items:center;gap:10px;
+      font-family:'Syne',sans-serif;font-size:15px;font-weight:700;
+      letter-spacing:.01em;
+    }
+    .nav-avatar{
+      width:28px;height:28px;border-radius:50%;
+      background:var(--accent-dim);border:1.5px solid var(--accent);
+      overflow:hidden;display:flex;align-items:center;justify-content:center;
+      color:var(--accent);font-size:13px;font-weight:800;flex-shrink:0;
+    }
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{
+      font-size:13.5px;color:var(--text-2);
+      transition:color .2s;position:relative;
+    }
+    .nav-links a:hover{color:var(--text-1)}
+    .nav-links a.active{
+      color:var(--accent);
+    }
+    .nav-links a.active::after{
+      content:'';position:absolute;bottom:-4px;left:0;right:0;
+      height:2px;border-radius:1px;background:var(--accent);
+    }
+
+    /* Hamburger */
+    .hamburger{
+      display:none;flex-direction:column;gap:5px;
+      background:none;border:none;cursor:pointer;
+      padding:6px;border-radius:6px;
+      transition:background .2s;
+    }
+    .hamburger:hover{background:var(--accent-dim)}
+    .hamburger span{
+      display:block;width:22px;height:2px;
+      background:var(--text-2);border-radius:2px;
+      transition:transform .3s,opacity .3s;
+    }
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* ════════════════════════════════════════
+       Hero
+       ════════════════════════════════════════ */
+    .hero{padding:72px 0 64px;position:relative;overflow:hidden}
+    .hero-glow{
+      position:absolute;inset:0;
+      background:radial-gradient(ellipse 65% 55% at 50% -10%,rgba(123,111,232,.14) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-body{position:relative}
+
+    .hero-avatar{
+      width:80px;height:80px;border-radius:50%;
+      border:2px solid var(--border);background:var(--surface);
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Syne',sans-serif;font-weight:800;font-size:28px;
+      color:var(--accent);margin-bottom:22px;overflow:hidden;
+    }
+    .hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .hero-avatar .initials{display:block} /* show when img fails */
+    .hero-avatar img+.initials{display:none}
+    .hero-avatar img:not([src]),.hero-avatar img[src=""]{display:none}
+    .hero-avatar img:not([src])~.initials,.hero-avatar img[src=""]~.initials{display:block}
+
+    .hero-status{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12.5px;color:var(--text-2);margin-bottom:18px;letter-spacing:.03em;
+    }
+    .status-dot{
+      width:7px;height:7px;border-radius:50%;
+      background:var(--green);box-shadow:0 0 8px var(--green);
+      animation:pulse 2.4s ease-in-out infinite;flex-shrink:0;
+    }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+    .hero-title{
+      font-family:'Syne',sans-serif;font-size:42px;font-weight:800;
+      line-height:1.13;letter-spacing:-.025em;margin-bottom:16px;
+    }
+    .hero-title em{font-style:normal;color:var(--accent)}
+
+    .hero-desc{
+      font-size:16px;color:var(--text-2);
+      max-width:460px;line-height:1.75;margin-bottom:30px;
+    }
+
+    .hero-actions{
+      display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;
+    }
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:10px 20px;background:var(--accent);color:#fff;
+      border-radius:var(--radius-sm);font-size:14px;font-weight:600;
+      transition:opacity .2s,transform .15s;
+    }
+    .btn-primary:hover{opacity:.85;transform:translateY(-1px)}
+    .btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+    .btn-secondary{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:10px 20px;background:transparent;color:var(--text-1);
+      border:1px solid var(--border);border-radius:var(--radius-sm);
+      font-size:14px;font-weight:500;
+      transition:border-color .2s,background .2s;
+    }
+    .btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
+    .btn-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+    .hero-stats{
+      display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--border);
+    }
+    .stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:700}
+    .stat-label{font-size:12px;color:var(--text-3);margin-top:3px}
+
+    /* ════════════════════════════════════════
+       Section Headings
+       ════════════════════════════════════════ */
+    .eyebrow{
+      font-size:11px;font-weight:600;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:8px;
+    }
+    .section-h2{
+      font-family:'Syne',sans-serif;font-size:26px;font-weight:700;
+      letter-spacing:-.01em;margin-bottom:28px;
+    }
+
+    /* ════════════════════════════════════════
+       Card
+       ════════════════════════════════════════ */
+    .card{
+      display:block;background:var(--surface);
+      border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 24px;transition:border-color .25s,background .25s,transform .2s;
+    }
+    .card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px)}
+    .card-grid{display:grid;gap:14px}
+    .card-grid-2{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+
+    /* ════════════════════════════════════════
+       Tags
+       ════════════════════════════════════════ */
+    .tag{
+      display:inline-flex;align-items:center;
+      padding:3px 9px;border-radius:4px;
+      font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    }
+    .tag-accent{background:var(--accent-dim);color:var(--accent)}
+    .tag-gold{background:var(--gold-dim);color:var(--gold)}
+    .tag-green{background:var(--green-dim);color:var(--green)}
+    .tag-red{background:var(--red-dim);color:var(--red)}
+
+    /* ════════════════════════════════════════
+       Arrow Link
+       ════════════════════════════════════════ */
+    .link-arrow{
+      display:inline-flex;align-items:center;gap:5px;
+      font-size:13px;font-weight:500;color:var(--accent);transition:gap .2s;
+    }
+    .link-arrow:hover{gap:9px}
+    .link-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+    /* ════════════════════════════════════════
+       Books / Free Resources
+       ════════════════════════════════════════ */
+    .book-card{display:flex;gap:18px;align-items:flex-start}
+    .book-cover{
+      width:58px;height:78px;border-radius:6px;
+      flex-shrink:0;display:flex;align-items:center;
+      justify-content:center;font-size:24px;
+    }
+    .book-cover-violet{background:linear-gradient(135deg,#7B6FE8,#4F46E5)}
+    .book-cover-gold{background:linear-gradient(135deg,#E8B94F,#D97706)}
+    .book-cover-green{background:linear-gradient(135deg,#4ADE80,#059669)}
+    .book-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:5px}
+    .book-desc{font-size:13px;color:var(--text-2);line-height:1.55;margin-bottom:8px}
+    .book-meta{font-size:11.5px;color:var(--text-3);margin-bottom:12px}
+
+    /* ════════════════════════════════════════
+       Courses
+       ════════════════════════════════════════ */
+    .course-card{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+    .course-info{flex:1}
+    .course-header{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+    .course-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+    .course-desc{font-size:13.5px;color:var(--text-2);line-height:1.55}
+    .course-price{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--gold);white-space:nowrap}
+
+    /* ════════════════════════════════════════
+       Community
+       ════════════════════════════════════════ */
+    .community-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+    .community-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+    .community-desc{font-size:13.5px;color:var(--text-2);line-height:1.6}
+    .community-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+
+    /* ════════════════════════════════════════
+       Articles
+       ════════════════════════════════════════ */
+    .article-item{
+      display:flex;align-items:flex-start;gap:20px;
+      padding:16px 0;border-bottom:1px solid var(--border);
+      transition:padding-left .2s;
+    }
+    .article-item:last-child{border-bottom:none}
+    .article-item:hover .article-title{color:var(--accent)}
+    .article-item:hover{padding-left:6px}
+    .article-date{
+      font-size:12px;color:var(--text-3);
+      width:88px;flex-shrink:0;padding-top:3px;
+    }
+    .article-info{flex:1}
+    .article-title{
+      font-size:15px;font-weight:500;line-height:1.45;
+      margin-bottom:7px;transition:color .2s;
+    }
+    .article-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .article-tag{
+      font-size:11px;color:var(--text-3);
+      background:var(--surface);border:1px solid var(--border);
+      padding:2px 8px;border-radius:4px;
+    }
+
+    /* ════════════════════════════════════════
+       Projects
+       ════════════════════════════════════════ */
+    .project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .project-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+    .project-desc{font-size:13.5px;color:var(--text-2);line-height:1.6}
+    .project-footer{margin-top:14px}
+
+    /* ════════════════════════════════════════
+       About
+       ════════════════════════════════════════ */
+    .about-layout{display:flex;gap:22px;align-items:flex-start}
+    .about-avatar{
+      width:64px;height:64px;border-radius:50%;
+      border:2px solid var(--border);background:var(--surface);
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Syne',sans-serif;font-weight:800;font-size:22px;
+      color:var(--accent);flex-shrink:0;overflow:hidden;
+    }
+    .about-bio{font-size:14.5px;color:var(--text-2);line-height:1.8}
+    .about-more{margin-top:16px}
+
+    /* ════════════════════════════════════════
+       View All
+       ════════════════════════════════════════ */
+    .view-all{margin-top:20px}
+
+    /* ════════════════════════════════════════
+       Footer
+       ════════════════════════════════════════ */
+    .footer{border-top:1px solid var(--border);padding:36px 0 40px}
+    .footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+    .footer-links a{font-size:13px;color:var(--text-3);transition:color .2s}
+    .footer-links a:hover{color:var(--text-1)}
+    .footer-copy{font-size:12.5px;color:var(--text-3)}
+
+    /* ════════════════════════════════════════
+       Content-visibility (performance)
+       ════════════════════════════════════════ */
+    #resources,#courses,#community,#articles,#projects,#about{
+      content-visibility:auto;
+      contain-intrinsic-size:400px;
+    }
+
+    /* ════════════════════════════════════════
+       Responsive
+       ════════════════════════════════════════ */
+    @media(max-width:620px){
+      .hero-title{font-size:30px}
+      .card-grid-2{grid-template-columns:1fr}
+      .course-card{flex-direction:column}
+      .book-card{flex-direction:column}
+      .hero-stats{gap:20px}
+      .about-layout{flex-direction:column}
+
+      .hamburger{display:flex}
+      .nav-links{
+        position:fixed;top:var(--nav-h);left:0;right:0;
+        flex-direction:column;gap:0;
+        background:rgba(11,11,18,.96);backdrop-filter:blur(18px);
+        border-bottom:1px solid var(--border);
+        padding:8px 0;display:none;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{
+        padding:12px 24px;font-size:15px;
+      }
+      .nav-links a.active::after{display:none}
+      .nav-links a.active{background:var(--accent-dim)}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .status-dot{animation:none}
+      .reveal{opacity:1;transform:none;transition:none}
+      *{transition:none!important}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ Navigation ══════════ -->
+  <nav class="nav" aria-label="主导航">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="回到首页">
+        <span class="nav-avatar" aria-hidden="true">H</span>
+        Huaxa125
+      </a>
+      <button class="hamburger" aria-label="切换导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" role="navigation" aria-label="页面导航">
+        <a href="#articles" data-section>文章</a>
+        <a href="#courses" data-section>课程</a>
+        <a href="#community" data-section>社群</a>
+        <a href="#projects" data-section>项目</a>
+        <a href="#about" data-section>关于</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- ══════════ Hero ══════════ -->
+      <section class="hero" aria-label="个人简介">
+        <div class="hero-glow"></div>
+        <div class="hero-body reveal">
+
+          <div class="hero-avatar">
+            <img src="https://unavatar.io/twitter/Huaxa125" alt="Huaxa125 头像" onerror="this.style.display='none'">
+            <span class="initials" aria-hidden="true">H</span>
+          </div>
+
+          <div class="hero-status">
+            <span class="status-dot" role="status"></span>
+            online · building in public
+          </div>
+
+          <h1 class="hero-title">
+            AI 内容创作者<br>
+            &amp; <em>自媒体博主</em>
+          </h1>
+
+          <p class="hero-desc">
+            专注 AI 应用与算法可见性，在 X 上公开写作、构建和成长。
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://x.com/Huaxa125" target="_blank" rel="noopener" class="btn-primary">
+              Follow @Huaxa125 →
+            </a>
+            <a href="#about" class="btn-secondary">
+              关于我
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="stat-num">2.8K</div>
+              <div class="stat-label">X 关注者</div>
+            </div>
+            <div>
+              <div class="stat-num">36</div>
+              <div class="stat-label">发布文章</div>
+            </div>
+            <div>
+              <div class="stat-num">2</div>
+              <div class="stat-label">在售课程</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════ Free Resources ══════════ -->
+      <section class="section reveal" id="resources" aria-labelledby="resources-title">
+        <div class="eyebrow">Free Resources</div>
+        <h2 class="section-h2" id="resources-title">免费资源</h2>
+        <div class="card-grid card-grid-2">
+
+          <a href="#" class="card book-card" target="_blank" rel="noopener">
+            <div class="book-cover book-cover-violet" aria-hidden="true">📘</div>
+            <div>
+              <div class="book-title">AI 提示词工程手册</div>
+              <div class="book-desc">从零开始掌握 AI 提示词设计，50+ 实战模板</div>
+              <div class="book-meta">68 页 · 中文 · PDF</div>
+              <span class="link-arrow">下载阅读 →</span>
+            </div>
+          </a>
+
+          <a href="#" class="card book-card" target="_blank" rel="noopener">
+            <div class="book-cover book-cover-gold" aria-hidden="true">📙</div>
+            <div>
+              <div class="book-title">自媒体增长清单</div>
+              <div class="book-desc">30 天内容创作者成长路线图，每天一个可执行动作</div>
+              <div class="book-meta">42 页 · 中文 · PDF</div>
+              <span class="link-arrow">下载阅读 →</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ══════════ Courses ══════════ -->
+      <section class="section reveal" id="courses" aria-labelledby="courses-title">
+        <div class="eyebrow">Courses</div>
+        <h2 class="section-h2" id="courses-title">课程</h2>
+        <div class="card-grid">
+
+          <a href="#" class="card course-card">
+            <div class="course-info">
+              <div class="course-header">
+                <span class="tag tag-green">Available</span>
+              </div>
+              <div class="course-title">AI 应用开发实战</div>
+              <div class="course-desc">用 Python + LLM 构建生产级 AI 应用，从原型到部署全流程</div>
+            </div>
+            <div class="course-price">¥299</div>
+          </a>
+
+          <a href="#" class="card course-card">
+            <div class="course-info">
+              <div class="course-header">
+                <span class="tag tag-green">Available</span>
+              </div>
+              <div class="course-title">自媒体算法拆解</div>
+              <div class="course-desc">深度解析 X / 小红书 / 抖音推荐机制，用算法思维做内容</div>
+            </div>
+            <div class="course-price">¥199</div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ══════════ Community ══════════ -->
+      <section class="section reveal" id="community" aria-labelledby="community-title">
+        <div class="eyebrow">Community</div>
+        <h2 class="section-h2" id="community-title">社群 · 一起成长</h2>
+        <div class="card-grid">
+
+          <a href="#" class="card">
+            <div class="community-header">
+              <div class="community-name">AI Builders 内部圈</div>
+              <span class="tag tag-gold">¥99/月</span>
+            </div>
+            <div class="community-desc">
+              每周一次线上讨论、独家 AI 工具评测、项目协作机会。已聚集 120+ 创作者与开发者。
+            </div>
+            <div class="community-footer">
+              <span class="link-arrow">查看加入方式 →</span>
+            </div>
+          </a>
+
+          <a href="#" class="card">
+            <div class="community-header">
+              <div class="community-name">免费 X 互促群</div>
+              <span class="tag tag-accent">免费</span>
+            </div>
+            <div class="community-desc">
+              在 X 上互相关注、互相转评，打破冷启动。每周主题讨论，一起 Build in Public。
+            </div>
+            <div class="community-footer">
+              <span class="link-arrow">查看加入方式 →</span>
+            </div>
+          </a>
+
+          <a href="#" class="card">
+            <div class="community-header">
+              <div class="community-name">Newsletter</div>
+              <span class="tag tag-accent">免费</span>
+            </div>
+            <div class="community-desc">
+              每周一封邮件，分享 AI 工具评测、内容增长策略与独立开发思考。
+            </div>
+            <div class="community-footer">
+              <span class="link-arrow">立即订阅 →</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ══════════ Articles ══════════ -->
+      <section class="section reveal" id="articles" aria-labelledby="articles-title">
+        <div class="eyebrow">The Blog</div>
+        <h2 class="section-h2" id="articles-title">最新文章</h2>
+
+        <div class="article-list">
+          <a href="#" class="article-item">
+            <time class="article-date" datetime="2026-06-19">Jun 19, 2026</time>
+            <div class="article-info">
+              <div class="article-title">用 Claude 自动搭建一套完整的 API 服务</div>
+              <div class="article-tags">
+                <span class="article-tag">AI</span>
+                <span class="article-tag">教程</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="article-item">
+            <time class="article-date" datetime="2026-06-12">Jun 12, 2026</time>
+            <div class="article-info">
+              <div class="article-title">我的 X 账号从 0 到 2.8K 关注者的内容策略复盘</div>
+              <div class="article-tags">
+                <span class="article-tag">自媒体</span>
+                <span class="article-tag">增长</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="article-item">
+            <time class="article-date" datetime="2026-06-05">Jun 5, 2026</time>
+            <div class="article-info">
+              <div class="article-title">用 n8n 搭建 AI 自动化工作流，省掉 80% 重复劳动</div>
+              <div class="article-tags">
+                <span class="article-tag">工具</span>
+                <span class="article-tag">自动化</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="article-item">
+            <time class="article-date" datetime="2026-05-28">May 28, 2026</time>
+            <div class="article-info">
+              <div class="article-title">大模型推理能力对比：Claude vs GPT 实际场景评测</div>
+              <div class="article-tags">
+                <span class="article-tag">AI</span>
+                <span class="article-tag">评测</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="article-item">
+            <time class="article-date" datetime="2026-05-20">May 20, 2026</time>
+            <div class="article-info">
+              <div class="article-title">内容创作者应该关注的 5 个 AI 趋势（2026 年中）</div>
+              <div class="article-tags">
+                <span class="article-tag">内容创作</span>
+                <span class="article-tag">趋势</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="view-all">
+          <a href="#" class="link-arrow">全部文章 →</a>
+        </div>
+      </section>
+
+      <!-- ══════════ Projects ══════════ -->
+      <section class="section reveal" id="projects" aria-labelledby="projects-title">
+        <div class="eyebrow">Building</div>
+        <h2 class="section-h2" id="projects-title">在做的项目</h2>
+        <div class="card-grid">
+
+          <a href="#" class="card">
+            <div class="project-header">
+              <div class="project-name">AI 写作助手</div>
+              <span class="tag tag-green">Live</span>
+            </div>
+            <div class="project-desc">基于 LLM 的中文内容创作辅助工具，支持多平台风格适配与 SEO 优化。</div>
+            <div class="project-footer">
+              <span class="link-arrow">查看详情 →</span>
+            </div>
+          </a>
+
+          <a href="#" class="card">
+            <div class="project-header">
+              <div class="project-name">Content Growth Dashboard</div>
+              <span class="tag tag-accent">In Progress</span>
+            </div>
+            <div class="project-desc">多平台内容数据聚合面板，追踪文章/推文表现，自动生成增长洞察报告。</div>
+            <div class="project-footer">
+              <span class="link-arrow">查看详情 →</span>
+            </div>
+          </a>
+
+        </div>
+        <div class="view-all">
+          <a href="#" class="link-arrow">全部项目 →</a>
+        </div>
+      </section>
+
+      <!-- ══════════ About ══════════ -->
+      <section class="section reveal" id="about" aria-labelledby="about-title">
+        <div class="eyebrow">About</div>
+        <h2 class="section-h2" id="about-title">关于我</h2>
+        <div class="card">
+          <div class="about-layout">
+            <div class="about-avatar" aria-hidden="true">H</div>
+            <div>
+              <p class="about-bio">
+                大家好，我是 Huaxa125，一名 AI 内容创作者与自媒体博主。<br><br>
+                白天写代码，晚上写内容。从 2024 年开始在 X 上公开记录构建过程，分享 AI 应用开发、内容增长策略与独立开发思考。<br><br>
+                相信「持续输出是最好的学习方式」，在这里与你一起成长。
+              </p>
+              <div class="about-more">
+                <a href="#" class="link-arrow">了解更多 →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ══════════ Footer ══════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#articles">文章</a>
+        <a href="#courses">课程</a>
+        <a href="#community">社群</a>
+        <a href="#projects">项目</a>
+        <a href="#about">关于</a>
+        <a href="https://x.com/Huaxa125" target="_blank" rel="noopener">X (Twitter)</a>
+        <a href="mailto:huaxa125@example.com">Email</a>
+        <a href="https://github.com/Huaxa125" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Huaxa125 · built with ♥
+      </div>
+    </div>
+  </footer>
+
+  <script defer>
+  /* ════════════════════════════════════════
+     Scroll-based nav highlight
+     ════════════════════════════════════════ */
+  (function(){
+    const sections = document.querySelectorAll('[id]');
+    const navLinks = document.querySelectorAll('[data-section]');
+    const OFFSET = 120;
+
+    function updateActiveLink(){
+      let current = '';
+      for(const sec of sections){
+        if(sec.getBoundingClientRect().top < OFFSET) current = sec.id;
+      }
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+
+    // Throttled scroll listener
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if(!ticking){ requestAnimationFrame(() => { updateActiveLink(); ticking=false; }); ticking=true; }
+    }, {passive:true});
+    updateActiveLink();
+
+    /* ════════════════════════════════════════
+       Scroll reveal (Intersection Observer)
+       ════════════════════════════════════════ */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ════════════════════════════════════════
+       Hamburger menu
+       ════════════════════════════════════════ */
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.nav-links');
+    if(hamburger && mobileNav){
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close on link click
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
