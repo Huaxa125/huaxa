@@ -115,7 +115,7 @@
        Layout
        ════════════════════════════════════════ */
     .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-    .section{padding:64px 0;border-top:1px solid var(--border)}
+    .section{padding:64px 0;border-top:1px solid var(--border);scroll-margin-top:calc(var(--nav-h,64px) + 16px)}
 
     /* ════════════════════════════════════════
        Scroll-reveal (used by JS)
@@ -251,8 +251,24 @@
     .btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
     .btn-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-    /* 联系表单 */
-    .contact-form{display:flex;flex-direction:column;gap:14px;max-width:520px}
+    .btn-accent{
+      display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      padding:10px 20px;background:var(--accent);color:#fff;
+      border:1px solid var(--accent);border-radius:var(--radius-sm);
+      font-size:14px;font-weight:600;cursor:pointer;
+      transition:opacity .2s,transform .15s,background .2s;
+    }
+    .btn-accent:hover{opacity:.9;transform:translateY(-1px)}
+    .btn-accent:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .btn-accent:disabled{opacity:.55;cursor:not-allowed;transform:none}
+
+    /* 联系表单面板 */
+    .contact-panel{
+      max-width:560px;background:var(--surface);
+      border:1px solid var(--border);border-radius:var(--radius);
+      padding:24px;box-shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+    .contact-form{display:flex;flex-direction:column;gap:14px}
     .form-row{display:flex;flex-direction:column;gap:6px}
     .form-row label{font-size:13px;color:var(--text-2)}
     .form-row input,.form-row textarea{
@@ -841,23 +857,25 @@
         <div class="eyebrow">Contact</div>
         <h2 class="section-h2" id="contact-title">聊聊？</h2>
         <p style="font-size:13.5px;color:var(--text-3);margin:-12px 0 20px">有合作、想法或问题，直接留言，我会发到邮箱。</p>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <label for="cf-name">姓名</label>
-            <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="60" required>
-          </div>
-          <div class="form-row">
-            <label for="cf-email">邮箱</label>
-            <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="120" required>
-          </div>
-          <div class="form-row">
-            <label for="cf-message">留言</label>
-            <textarea id="cf-message" name="message" maxlength="5000" required></textarea>
-          </div>
-          <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
-          <button class="btn-primary" type="submit" id="cf-submit">发送留言</button>
-          <p class="form-note">提交即表示同意我们仅用该邮箱回复你。</p>
-        </form>
+        <div class="contact-panel">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <label for="cf-name">姓名</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-email">邮箱</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-message">留言</label>
+              <textarea id="cf-message" name="message" maxlength="5000" required></textarea>
+            </div>
+            <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+            <button class="btn-primary" type="submit" id="cf-submit">发送留言</button>
+            <p class="form-note">提交即表示同意我们仅用该邮箱回复你。</p>
+          </form>
+        </div>
       </section>
 
   </main>
