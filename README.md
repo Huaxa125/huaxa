@@ -1,8 +1,8 @@
 # Huaxa125 · AI Builder
 
-个人品牌静态主页：**AI 内容创作者 & 自媒体博主**。
+个人品牌静态主页：**AI Builder —— 公开构建 AI 产品，分享从 0 到 1 的增长过程**。
 
-**Live:** [https://huaxa.vercel.app](https://huaxa.vercel.app)
+**Live:** [https://huaxa.pages.dev](https://huaxa.pages.dev)
 
 ## Features
 
@@ -19,7 +19,7 @@
 
 ## Deploy
 
-推荐 [Vercel](https://vercel.com) 部署本仓库根目录；也可 GitHub Pages。
+部署到 [Cloudflare Pages](https://pages.cloudflare.com)：连接本仓库根目录即可自动部署（纯静态，无需构建命令）。
 
 ```bash
 # 本地预览
