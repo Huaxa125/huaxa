@@ -251,6 +251,26 @@
     .btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
     .btn-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+    /* 联系表单 */
+    .contact-form{display:flex;flex-direction:column;gap:14px;max-width:520px}
+    .form-row{display:flex;flex-direction:column;gap:6px}
+    .form-row label{font-size:13px;color:var(--text-2)}
+    .form-row input,.form-row textarea{
+      font:inherit;font-size:14px;color:var(--text-1);
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:10px 12px;
+      transition:border-color .2s,box-shadow .2s;
+    }
+    .form-row input:focus,.form-row textarea:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px var(--accent-dim);
+    }
+    .form-row textarea{resize:vertical;min-height:110px}
+    .form-status{font-size:13px;min-height:18px}
+    .form-status.ok{color:var(--success,#1d9e75)}
+    .form-status.err{color:var(--danger,#e24b4a)}
+    .form-note{font-size:12px;color:var(--text-3);margin-top:-4px}
+
     .hero-stats{
       display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--border);
     }
@@ -476,6 +496,7 @@
           <a href="#community" data-section>社群</a>
           <a href="#projects" data-section>项目</a>
           <a href="#about" data-section>关于</a>
+          <a href="#contact" data-section>联系</a>
         </div>
       </div>
     </nav>
@@ -788,6 +809,31 @@
       </section>
 
     </div><!-- /container -->
+
+      <!-- ══════════ Contact ══════════ -->
+      <section class="section reveal" id="contact" aria-labelledby="contact-title">
+        <div class="eyebrow">Contact</div>
+        <h2 class="section-h2" id="contact-title">聊聊？</h2>
+        <p style="font-size:13.5px;color:var(--text-3);margin:-12px 0 20px">有合作、想法或问题，直接留言，我会发到邮箱。</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="cf-name">姓名</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">邮箱</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">留言</label>
+            <textarea id="cf-message" name="message" maxlength="5000" required></textarea>
+          </div>
+          <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+          <button class="btn-primary" type="submit" id="cf-submit">发送留言</button>
+          <p class="form-note">提交即表示同意我们仅用该邮箱回复你。</p>
+        </form>
+      </section>
+
   </main>
 
   <!-- ══════════ Footer ══════════ -->
@@ -871,6 +917,52 @@
           hamburger.setAttribute('aria-expanded', 'false');
           hamburger.setAttribute('aria-label', '打开导航菜单');
         });
+      });
+    }
+
+    /* ════════════════════════════════════════
+       Contact form (POST /api/contact)
+       ════════════════════════════════════════ */
+    const form = document.getElementById('contact-form');
+    if(form){
+      const status = document.getElementById('cf-status');
+      const submitBtn = document.getElementById('cf-submit');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          message: form.message.value.trim(),
+        };
+        if(!payload.name || !payload.email || !payload.message){
+          status.textContent = '请把姓名、邮箱和留言都填好。';
+          status.className = 'form-status err';
+          return;
+        }
+        submitBtn.disabled = true;
+        status.textContent = '发送中…';
+        status.className = 'form-status';
+        try{
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json().catch(() => ({}));
+          if(res.ok && data.ok){
+            status.textContent = data.msg || '已收到，我会尽快回复你';
+            status.className = 'form-status ok';
+            form.reset();
+          } else {
+            status.textContent = data.error || '发送失败，请稍后再试。';
+            status.className = 'form-status err';
+          }
+        }catch{
+          status.textContent = '网络错误，请稍后再试。';
+          status.className = 'form-status err';
+        }finally{
+          submitBtn.disabled = false;
+        }
       });
     }
   })();
