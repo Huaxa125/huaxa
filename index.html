@@ -271,6 +271,22 @@
     .form-status.err{color:var(--danger,#e24b4a)}
     .form-note{font-size:12px;color:var(--text-3);margin-top:-4px}
 
+    /* Newsletter 订阅表单 */
+    .newsletter-form{display:flex;gap:8px;margin-top:12px}
+    .newsletter-form input{
+      flex:1;font:inherit;font-size:13px;color:var(--text-1);
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:8px 10px;
+      transition:border-color .2s,box-shadow .2s;
+      min-width:0;
+    }
+    .newsletter-form input:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px var(--accent-dim);
+    }
+    .newsletter-form input::placeholder{color:var(--text-3)}
+    .btn-sm{padding:6px 16px;font-size:13px}
+
     .hero-stats{
       display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--border);
     }
@@ -659,17 +675,27 @@
             </div>
           </a>
 
-          <div class="card card-static" aria-label="Newsletter，即将上线">
+          <div class="card card-static" aria-label="Newsletter 订阅">
             <div class="community-header">
               <div class="community-name">Newsletter</div>
-              <span class="tag tag-muted">即将上线</span>
+              <span class="tag tag-accent">已上线</span>
             </div>
             <div class="community-desc">
               每周一封邮件，分享 AI 工具评测、内容增长策略与独立开发思考。
             </div>
-            <div class="community-footer">
-              <span class="link-arrow link-soon">订阅入口筹备中</span>
-            </div>
+            <form id="newsletter-form" class="newsletter-form" autocomplete="off">
+              <input
+                type="email"
+                id="nl-email"
+                placeholder="your@email.com"
+                required
+                aria-label="订阅邮箱"
+              />
+              <button type="submit" id="nl-submit" class="btn btn-accent btn-sm">
+                订阅
+              </button>
+            </form>
+            <div id="nl-status" class="form-status" aria-live="polite"></div>
           </div>
 
         </div>
@@ -962,6 +988,53 @@
           status.className = 'form-status err';
         }finally{
           submitBtn.disabled = false;
+        }
+      });
+    }
+
+    /* ════════════════════════════════════════
+       Newsletter form (POST /api/subscribe)
+       ════════════════════════════════════════ */
+    const nlForm = document.getElementById('newsletter-form');
+    if(nlForm){
+      const nlStatus = document.getElementById('nl-status');
+      const nlSubmit = document.getElementById('nl-submit');
+      nlForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('nl-email').value.trim();
+        if(!email){
+          nlStatus.textContent = '请输入邮箱地址';
+          nlStatus.className = 'form-status err';
+          return;
+        }
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+          nlStatus.textContent = '邮箱格式不正确';
+          nlStatus.className = 'form-status err';
+          return;
+        }
+        nlSubmit.disabled = true;
+        nlStatus.textContent = '订阅中…';
+        nlStatus.className = 'form-status';
+        try{
+          const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+          const data = await res.json().catch(() => ({}));
+          if(res.ok && data.ok){
+            nlStatus.textContent = data.msg || '订阅成功！感谢关注 📬';
+            nlStatus.className = 'form-status ok';
+            nlForm.reset();
+          } else {
+            nlStatus.textContent = data.msg || '订阅失败，请稍后再试。';
+            nlStatus.className = 'form-status err';
+          }
+        }catch{
+          nlStatus.textContent = '网络错误，请稍后再试。';
+          nlStatus.className = 'form-status err';
+        }finally{
+          nlSubmit.disabled = false;
         }
       });
     }
