@@ -4,25 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Huaxa125 · AI Builder</title>
-  <meta name="description" content="AI Builder，公开构建 AI 产品的人。专注 AI 应用开发、内容增长与独立开发，在 X 上公开记录从 0 到 1 的构建过程。">
-  <meta name="keywords" content="AI, 自媒体, 内容创作, AI工具, 算法, Huaxa125">
+  <meta name="description" content="Huaxa125 — AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发，在 X 上公开记录从 0 到 1 的构建过程。">
+  <meta name="keywords" content="AI, 自媒体, 内容创作, AI工具, 算法, Huaxa125, AI Builder">
+  <meta name="author" content="Huaxa125">
+  <meta name="theme-color" content="#0B0B12">
+  <link rel="canonical" href="https://huaxa.vercel.app/">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Huaxa125 · AI Builder">
-  <meta property="og:description" content="AI & 自媒体博主，写 AI 应用、算法与内容增长的交叉地带。">
+  <meta property="og:description" content="AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发，在 X 上公开构建。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://huaxa125.github.io/huaxa/">
-  <meta property="og:image" content="https://huaxa125.github.io/huaxa/avatar.jpg">
+  <meta property="og:url" content="https://huaxa.vercel.app/">
+  <meta property="og:image" content="https://huaxa.vercel.app/avatar.jpg">
+  <meta property="og:image:alt" content="Huaxa125 头像">
   <meta property="og:locale" content="zh_CN">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Huaxa125">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Huaxa125">
   <meta name="twitter:creator" content="@Huaxa125">
+  <meta name="twitter:title" content="Huaxa125 · AI Builder">
+  <meta name="twitter:description" content="AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发。">
+  <meta name="twitter:image" content="https://huaxa.vercel.app/avatar.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="avatar-320.jpg">
 
-  <!-- Fonts -->
+  <!-- Fonts: preconnect + display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -31,14 +45,15 @@
     "@type": "Person",
     "name": "Huaxa125",
     "alternateName": "Huaxa",
-    "description": "AI Builder，专注 AI 应用开发与内容增长，在 X 上公开构建 AI 产品",
-    "url": "https://huaxa125.com",
+    "description": "AI 内容创作者与自媒体博主，专注 AI 应用开发与内容增长，在 X 上公开构建",
+    "url": "https://huaxa.vercel.app/",
+    "image": "https://huaxa.vercel.app/avatar.jpg",
     "sameAs": [
       "https://x.com/Huaxa125",
       "https://github.com/Huaxa125"
     ],
     "jobTitle": "AI Builder",
-    "knowsAbout": ["Artificial Intelligence", "Content Creation", "Algorithm"]
+    "knowsAbout": ["Artificial Intelligence", "Content Creation", "Algorithm", "Independent Development"]
   }
   </script>
 
@@ -83,8 +98,18 @@
       -webkit-font-smoothing:antialiased;
     }
     a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
+    img{display:block;max-width:100%;height:auto}
     ul{list-style:none}
+    button{font:inherit}
+
+    /* Skip link */
+    .skip-link{
+      position:absolute;left:16px;top:-48px;z-index:200;
+      padding:10px 16px;background:var(--accent);color:#fff;
+      border-radius:var(--radius-sm);font-size:14px;font-weight:600;
+      transition:top .2s;
+    }
+    .skip-link:focus{top:12px;outline:2px solid #fff;outline-offset:2px}
 
     /* ════════════════════════════════════════
        Layout
@@ -133,9 +158,8 @@
       transition:color .2s;position:relative;
     }
     .nav-links a:hover{color:var(--text-1)}
-    .nav-links a.active{
-      color:var(--accent);
-    }
+    .nav-links a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+    .nav-links a.active{color:var(--accent)}
     .nav-links a.active::after{
       content:'';position:absolute;bottom:-4px;left:0;right:0;
       height:2px;border-radius:1px;background:var(--accent);
@@ -149,6 +173,7 @@
       transition:background .2s;
     }
     .hamburger:hover{background:var(--accent-dim)}
+    .hamburger:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .hamburger span{
       display:block;width:22px;height:2px;
       background:var(--text-2);border-radius:2px;
@@ -177,7 +202,7 @@
       color:var(--accent);margin-bottom:22px;overflow:hidden;
     }
     .hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-    .hero-avatar .initials{display:block} /* show when img fails */
+    .hero-avatar .initials{display:block}
     .hero-avatar img+.initials{display:none}
     .hero-avatar img:not([src]),.hero-avatar img[src=""]{display:none}
     .hero-avatar img:not([src])~.initials,.hero-avatar img[src=""]~.initials{display:block}
@@ -252,7 +277,10 @@
       border:1px solid var(--border);border-radius:var(--radius);
       padding:22px 24px;transition:border-color .25s,background .25s,transform .2s;
     }
-    .card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px)}
+    a.card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px)}
+    a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .card-static{cursor:default}
+    .card-static:hover{border-color:var(--border);background:var(--surface);transform:none}
     .card-grid{display:grid;gap:14px}
     .card-grid-2{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
 
@@ -268,6 +296,7 @@
     .tag-gold{background:var(--gold-dim);color:var(--gold)}
     .tag-green{background:var(--green-dim);color:var(--green)}
     .tag-red{background:var(--red-dim);color:var(--red)}
+    .tag-muted{background:rgba(80,80,122,.18);color:var(--text-3)}
 
     /* ════════════════════════════════════════
        Arrow Link
@@ -276,8 +305,9 @@
       display:inline-flex;align-items:center;gap:5px;
       font-size:13px;font-weight:500;color:var(--accent);transition:gap .2s;
     }
-    .link-arrow:hover{gap:9px}
+    a.link-arrow:hover{gap:9px}
     .link-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+    .link-soon{color:var(--text-3);pointer-events:none;cursor:default}
 
     /* ════════════════════════════════════════
        Books / Free Resources
@@ -322,8 +352,10 @@
       transition:padding-left .2s;
     }
     .article-item:last-child{border-bottom:none}
-    .article-item:hover .article-title{color:var(--accent)}
-    .article-item:hover{padding-left:6px}
+    a.article-item:hover .article-title{color:var(--accent)}
+    a.article-item:hover{padding-left:6px}
+    a.article-item:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+    .article-item-static{cursor:default}
     .article-date{
       font-size:12px;color:var(--text-3);
       width:88px;flex-shrink:0;padding-top:3px;
@@ -333,7 +365,7 @@
       font-size:15px;font-weight:500;line-height:1.45;
       margin-bottom:7px;transition:color .2s;
     }
-    .article-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .article-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
     .article-tag{
       font-size:11px;color:var(--text-3);
       background:var(--surface);border:1px solid var(--border);
@@ -359,6 +391,7 @@
       font-family:'Syne',sans-serif;font-weight:800;font-size:22px;
       color:var(--accent);flex-shrink:0;overflow:hidden;
     }
+    .about-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .about-bio{font-size:14.5px;color:var(--text-2);line-height:1.8}
     .about-more{margin-top:16px}
 
@@ -375,6 +408,7 @@
     .footer-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
     .footer-links a{font-size:13px;color:var(--text-3);transition:color .2s}
     .footer-links a:hover{color:var(--text-1)}
+    .footer-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
     .footer-copy{font-size:12.5px;color:var(--text-3)}
 
     /* ════════════════════════════════════════
@@ -382,7 +416,7 @@
        ════════════════════════════════════════ */
     #resources,#courses,#community,#articles,#projects,#about{
       content-visibility:auto;
-      contain-intrinsic-size:400px;
+      contain-intrinsic-size:auto 400px;
     }
 
     /* ════════════════════════════════════════
@@ -413,53 +447,70 @@
     }
 
     @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
       .status-dot{animation:none}
       .reveal{opacity:1;transform:none;transition:none}
-      *{transition:none!important}
+      *,*::before,*::after{transition:none!important;animation:none!important}
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════ Navigation ══════════ -->
-  <nav class="nav" aria-label="主导航">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand" aria-label="回到首页">
-        <span class="nav-avatar" aria-hidden="true">H</span>
-        Huaxa125
-      </a>
-      <button class="hamburger" aria-label="切换导航菜单" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" role="navigation" aria-label="页面导航">
-        <a href="#articles" data-section>文章</a>
-        <a href="#courses" data-section>课程</a>
-        <a href="#community" data-section>社群</a>
-        <a href="#projects" data-section>项目</a>
-        <a href="#about" data-section>关于</a>
-      </div>
-    </div>
-  </nav>
+  <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <main>
+  <!-- ══════════ Navigation ══════════ -->
+  <header>
+    <nav class="nav" aria-label="主导航">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand" aria-label="Huaxa125 首页">
+          <span class="nav-avatar" aria-hidden="true">H</span>
+          Huaxa125
+        </a>
+        <button class="hamburger" type="button" id="nav-toggle"
+          aria-label="打开导航菜单" aria-expanded="false" aria-controls="primary-nav">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="primary-nav" role="navigation" aria-label="页面导航">
+          <a href="#articles" data-section>文章</a>
+          <a href="#courses" data-section>课程</a>
+          <a href="#community" data-section>社群</a>
+          <a href="#projects" data-section>项目</a>
+          <a href="#about" data-section>关于</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
     <div class="container">
 
       <!-- ══════════ Hero ══════════ -->
-      <section class="hero" aria-label="个人简介">
-        <div class="hero-glow"></div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-body reveal">
 
           <div class="hero-avatar">
-            <img src="avatar.jpg" alt="Huaxa125 头像" onerror="this.style.display='none'">
+            <picture>
+              <source type="image/webp" srcset="avatar-160.webp 160w, avatar-320.webp 320w" sizes="80px">
+              <img
+                src="avatar-320.jpg"
+                srcset="avatar-160.jpg 160w, avatar-320.jpg 320w"
+                sizes="80px"
+                width="80" height="80"
+                alt="Huaxa125 的头像"
+                decoding="async"
+                fetchpriority="high"
+                onerror="this.style.display='none'">
+            </picture>
             <span class="initials" aria-hidden="true">H</span>
           </div>
 
           <div class="hero-status">
-            <span class="status-dot" role="status"></span>
-            online · building in public
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>online · building in public</span>
           </div>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title" id="hero-title">
             AI 内容创作者<br>
             &amp; <em>自媒体博主</em>
           </h1>
@@ -469,7 +520,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="https://x.com/Huaxa125" target="_blank" rel="noopener" class="btn-primary">
+            <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer" class="btn-primary">
               Follow @Huaxa125 →
             </a>
             <a href="#about" class="btn-secondary">
@@ -477,50 +528,49 @@
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div>
+          <div class="hero-stats" role="list" aria-label="关键数据">
+            <div role="listitem">
               <div class="stat-num">2.8K</div>
               <div class="stat-label">X 关注者</div>
             </div>
-            <div>
+            <div role="listitem">
               <div class="stat-num">36</div>
               <div class="stat-label">发布文章</div>
             </div>
-            <div>
+            <div role="listitem">
               <div class="stat-num">2</div>
-              <div class="stat-label">在售课程</div>
+              <div class="stat-label">筹备课程</div>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- TODO(Huaxa): 下列 book/course/community/article 链接暂指向 X/GitHub 占位。请用 data-todo 属性搜索并替换为真实地址（文章URL/课程购买页/社群入群/资源下载）。 -->
       <!-- ══════════ Free Resources ══════════ -->
       <section class="section reveal" id="resources" aria-labelledby="resources-title">
         <div class="eyebrow">Free Resources</div>
         <h2 class="section-h2" id="resources-title">免费资源</h2>
         <div class="card-grid card-grid-2">
 
-          <a href="https://x.com/Huaxa125" class="card book-card" target="_blank" rel="noopener" data-todo="book-link">
+          <div class="card book-card card-static" aria-label="AI 提示词工程手册，即将上线">
             <div class="book-cover book-cover-violet" aria-hidden="true">📘</div>
             <div>
               <div class="book-title">AI 提示词工程手册</div>
               <div class="book-desc">从零开始掌握 AI 提示词设计，50+ 实战模板</div>
               <div class="book-meta">68 页 · 中文 · PDF</div>
-              <span class="link-arrow">下载阅读 →</span>
+              <span class="tag tag-muted">即将上线</span>
             </div>
-          </a>
+          </div>
 
-          <a href="https://x.com/Huaxa125" class="card book-card" target="_blank" rel="noopener" data-todo="book-link">
+          <div class="card book-card card-static" aria-label="自媒体增长清单，即将上线">
             <div class="book-cover book-cover-gold" aria-hidden="true">📙</div>
             <div>
               <div class="book-title">自媒体增长清单</div>
               <div class="book-desc">30 天内容创作者成长路线图，每天一个可执行动作</div>
               <div class="book-meta">42 页 · 中文 · PDF</div>
-              <span class="link-arrow">下载阅读 →</span>
+              <span class="tag tag-muted">即将上线</span>
             </div>
-          </a>
+          </div>
 
         </div>
       </section>
@@ -531,27 +581,27 @@
         <h2 class="section-h2" id="courses-title">课程</h2>
         <div class="card-grid">
 
-          <a href="https://x.com/Huaxa125" class="card course-card" data-todo="course-link">
+          <div class="card course-card card-static" aria-label="AI 应用开发实战，即将上线">
             <div class="course-info">
               <div class="course-header">
-                <span class="tag tag-green">Available</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
               <div class="course-title">AI 应用开发实战</div>
               <div class="course-desc">用 Python + LLM 构建生产级 AI 应用，从原型到部署全流程</div>
             </div>
             <div class="course-price">¥299</div>
-          </a>
+          </div>
 
-          <a href="https://x.com/Huaxa125" class="card course-card" data-todo="course-link">
+          <div class="card course-card card-static" aria-label="自媒体算法拆解，即将上线">
             <div class="course-info">
               <div class="course-header">
-                <span class="tag tag-green">Available</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
               <div class="course-title">自媒体算法拆解</div>
               <div class="course-desc">深度解析 X / 小红书 / 抖音推荐机制，用算法思维做内容</div>
             </div>
             <div class="course-price">¥199</div>
-          </a>
+          </div>
 
         </div>
       </section>
@@ -562,7 +612,7 @@
         <h2 class="section-h2" id="community-title">社群 · 一起成长</h2>
         <div class="card-grid">
 
-          <a href="https://x.com/Huaxa125" class="card" data-todo="community-link">
+          <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
             <div class="community-header">
               <div class="community-name">AI Builders 内部圈</div>
               <span class="tag tag-gold">¥99/月</span>
@@ -571,11 +621,11 @@
               每周一次线上讨论、独家 AI 工具评测、项目协作机会。已聚集 120+ 创作者与开发者。
             </div>
             <div class="community-footer">
-              <span class="link-arrow">查看加入方式 →</span>
+              <span class="link-arrow">在 X 了解加入方式 →</span>
             </div>
           </a>
 
-          <a href="https://x.com/Huaxa125" class="card" data-todo="community-link">
+          <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
             <div class="community-header">
               <div class="community-name">免费 X 互促群</div>
               <span class="tag tag-accent">免费</span>
@@ -584,22 +634,22 @@
               在 X 上互相关注、互相转评，打破冷启动。每周主题讨论，一起 Build in Public。
             </div>
             <div class="community-footer">
-              <span class="link-arrow">查看加入方式 →</span>
+              <span class="link-arrow">前往 X 参与 →</span>
             </div>
           </a>
 
-          <a href="https://x.com/Huaxa125" class="card" data-todo="community-link">
+          <div class="card card-static" aria-label="Newsletter，即将上线">
             <div class="community-header">
               <div class="community-name">Newsletter</div>
-              <span class="tag tag-accent">免费</span>
+              <span class="tag tag-muted">即将上线</span>
             </div>
             <div class="community-desc">
               每周一封邮件，分享 AI 工具评测、内容增长策略与独立开发思考。
             </div>
             <div class="community-footer">
-              <span class="link-arrow">立即订阅 →</span>
+              <span class="link-arrow link-soon">订阅入口筹备中</span>
             </div>
-          </a>
+          </div>
 
         </div>
       </section>
@@ -608,66 +658,72 @@
       <section class="section reveal" id="articles" aria-labelledby="articles-title">
         <div class="eyebrow">The Blog</div>
         <h2 class="section-h2" id="articles-title">最新文章</h2>
+        <p style="font-size:13.5px;color:var(--text-3);margin:-12px 0 20px">以下选题正在整理中；完整讨论与更新请关注 X。</p>
 
-        <div class="article-list">
-          <a href="https://x.com/Huaxa125" class="article-item" data-todo="article-link">
+        <div class="article-list" role="list">
+          <article class="article-item article-item-static" role="listitem">
             <time class="article-date" datetime="2026-06-19">Jun 19, 2026</time>
             <div class="article-info">
               <div class="article-title">用 Claude 自动搭建一套完整的 API 服务</div>
               <div class="article-tags">
                 <span class="article-tag">AI</span>
                 <span class="article-tag">教程</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
             </div>
-          </a>
+          </article>
 
-          <a href="https://x.com/Huaxa125" class="article-item" data-todo="article-link">
+          <article class="article-item article-item-static" role="listitem">
             <time class="article-date" datetime="2026-06-12">Jun 12, 2026</time>
             <div class="article-info">
               <div class="article-title">我的 X 账号从 0 到 2.8K 关注者的内容策略复盘</div>
               <div class="article-tags">
                 <span class="article-tag">自媒体</span>
                 <span class="article-tag">增长</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
             </div>
-          </a>
+          </article>
 
-          <a href="https://x.com/Huaxa125" class="article-item" data-todo="article-link">
+          <article class="article-item article-item-static" role="listitem">
             <time class="article-date" datetime="2026-06-05">Jun 5, 2026</time>
             <div class="article-info">
               <div class="article-title">用 n8n 搭建 AI 自动化工作流，省掉 80% 重复劳动</div>
               <div class="article-tags">
                 <span class="article-tag">工具</span>
                 <span class="article-tag">自动化</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
             </div>
-          </a>
+          </article>
 
-          <a href="https://x.com/Huaxa125" class="article-item" data-todo="article-link">
+          <article class="article-item article-item-static" role="listitem">
             <time class="article-date" datetime="2026-05-28">May 28, 2026</time>
             <div class="article-info">
               <div class="article-title">大模型推理能力对比：Claude vs GPT 实际场景评测</div>
               <div class="article-tags">
                 <span class="article-tag">AI</span>
                 <span class="article-tag">评测</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
             </div>
-          </a>
+          </article>
 
-          <a href="https://x.com/Huaxa125" class="article-item" data-todo="article-link">
+          <article class="article-item article-item-static" role="listitem">
             <time class="article-date" datetime="2026-05-20">May 20, 2026</time>
             <div class="article-info">
               <div class="article-title">内容创作者应该关注的 5 个 AI 趋势（2026 年中）</div>
               <div class="article-tags">
                 <span class="article-tag">内容创作</span>
                 <span class="article-tag">趋势</span>
+                <span class="tag tag-muted">即将上线</span>
               </div>
             </div>
-          </a>
+          </article>
         </div>
 
         <div class="view-all">
-          <a href="https://x.com/Huaxa125" class="link-arrow" data-todo="all-articles">全部文章 →</a>
+          <a href="https://x.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 X 阅读更多 →</a>
         </div>
       </section>
 
@@ -677,31 +733,31 @@
         <h2 class="section-h2" id="projects-title">在做的项目</h2>
         <div class="card-grid">
 
-          <a href="https://github.com/Huaxa125" class="card" data-todo="project-link">
+          <div class="card card-static" aria-label="AI 写作助手，进行中">
             <div class="project-header">
               <div class="project-name">AI 写作助手</div>
-              <span class="tag tag-green">Live</span>
+              <span class="tag tag-accent">In Progress</span>
             </div>
             <div class="project-desc">基于 LLM 的中文内容创作辅助工具，支持多平台风格适配与 SEO 优化。</div>
             <div class="project-footer">
-              <span class="link-arrow">查看详情 →</span>
+              <span class="link-arrow link-soon">详情页筹备中</span>
             </div>
-          </a>
+          </div>
 
-          <a href="https://github.com/Huaxa125" class="card" data-todo="project-link">
+          <div class="card card-static" aria-label="Content Growth Dashboard，进行中">
             <div class="project-header">
               <div class="project-name">Content Growth Dashboard</div>
               <span class="tag tag-accent">In Progress</span>
             </div>
             <div class="project-desc">多平台内容数据聚合面板，追踪文章/推文表现，自动生成增长洞察报告。</div>
             <div class="project-footer">
-              <span class="link-arrow">查看详情 →</span>
+              <span class="link-arrow link-soon">详情页筹备中</span>
             </div>
-          </a>
+          </div>
 
         </div>
         <div class="view-all">
-          <a href="https://github.com/Huaxa125" class="link-arrow" data-todo="all-projects">全部项目 →</a>
+          <a href="https://github.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 GitHub 查看公开仓库 →</a>
         </div>
       </section>
 
@@ -711,7 +767,12 @@
         <h2 class="section-h2" id="about-title">关于我</h2>
         <div class="card">
           <div class="about-layout">
-            <div class="about-avatar" aria-hidden="true">H</div>
+            <div class="about-avatar" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="avatar-160.webp">
+                <img src="avatar-160.jpg" width="64" height="64" alt="" decoding="async" loading="lazy">
+              </picture>
+            </div>
             <div>
               <p class="about-bio">
                 大家好，我是 Huaxa125，一名 AI 内容创作者与自媒体博主。<br><br>
@@ -719,7 +780,7 @@
                 相信「持续输出是最好的学习方式」，在这里与你一起成长。
               </p>
               <div class="about-more">
-                <a href="https://x.com/Huaxa125" class="link-arrow" data-todo="about-more">了解更多 →</a>
+                <a href="https://x.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 X 了解更多 →</a>
               </div>
             </div>
           </div>
@@ -730,20 +791,19 @@
   </main>
 
   <!-- ══════════ Footer ══════════ -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="页脚链接">
         <a href="#articles">文章</a>
         <a href="#courses">课程</a>
         <a href="#community">社群</a>
         <a href="#projects">项目</a>
         <a href="#about">关于</a>
-        <a href="https://x.com/Huaxa125" target="_blank" rel="noopener">X (Twitter)</a>
-        <a href="mailto:huaxa125@example.com">Email</a>
-        <a href="https://github.com/Huaxa125" target="_blank" rel="noopener">GitHub</a>
-      </div>
+        <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        <a href="https://github.com/Huaxa125" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
       <div class="footer-copy">
-        &copy; 2026 Huaxa125 · built with ♥
+        &copy; 2026 Huaxa125 · built with ♥ · <a href="https://huaxa.vercel.app/" style="color:inherit">huaxa.vercel.app</a>
       </div>
     </div>
   </footer>
@@ -753,7 +813,7 @@
      Scroll-based nav highlight
      ════════════════════════════════════════ */
   (function(){
-    const sections = document.querySelectorAll('[id]');
+    const sections = document.querySelectorAll('main [id]');
     const navLinks = document.querySelectorAll('[data-section]');
     const OFFSET = 120;
 
@@ -767,7 +827,6 @@
       });
     }
 
-    // Throttled scroll listener
     let ticking = false;
     window.addEventListener('scroll', () => {
       if(!ticking){ requestAnimationFrame(() => { updateActiveLink(); ticking=false; }); ticking=true; }
@@ -777,35 +836,40 @@
     /* ════════════════════════════════════════
        Scroll reveal (Intersection Observer)
        ════════════════════════════════════════ */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(prefersReduced){
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
 
     /* ════════════════════════════════════════
        Hamburger menu
        ════════════════════════════════════════ */
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('primary-nav');
     if(hamburger && mobileNav){
       hamburger.addEventListener('click', () => {
         const isOpen = mobileNav.classList.toggle('open');
         hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? '关闭导航菜单' : '打开导航菜单');
       });
 
-      // Close on link click
       mobileNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mobileNav.classList.remove('open');
           hamburger.classList.remove('open');
           hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.setAttribute('aria-label', '打开导航菜单');
         });
       });
     }
