@@ -501,22 +501,7 @@
        ════════════════════════════════════════ */
     @media(max-width:768px){
       .nav-center{display:none}
-      .hamburger{display:flex}
-      .mobile-nav{
-        position:fixed;top:var(--nav-h);left:0;right:0;
-        flex-direction:column;gap:0;align-items:center;
-        background:rgba(250,246,241,.97);backdrop-filter:blur(16px);
-        border-bottom:1px solid var(--border-light);
-        padding:12px 0;display:none;
-        z-index:99;
-      }
-      .mobile-nav.open{display:flex}
-      .mobile-nav a{
-        padding:12px 32px;font-size:15px;font-weight:500;
-        color:var(--text-2);border-bottom:1px solid var(--border-light);
-        text-align:center;width:100%;max-width:400px;box-sizing:border-box;
-      }
-      .mobile-nav a:hover{background:var(--accent-dim);color:var(--accent)}
+      .nav-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 
       .hero-title{font-size:28px}
       .card-grid-2{grid-template-columns:1fr}
@@ -574,20 +559,10 @@
         </div>
 
         <button class="hamburger" type="button" id="nav-toggle"
-          aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-nav">
+          aria-label="打开导航菜单" aria-expanded="false" style="display:none">
           <span></span><span></span><span></span>
         </button>
       </div>
-    </div>
-
-    <!-- Mobile nav -->
-    <div class="mobile-nav" id="mobile-nav">
-      <a href="#articles" data-section data-i18n="nav_articles">文章</a>
-      <a href="#courses" data-section data-i18n="nav_courses">课程</a>
-      <a href="#community" data-section data-i18n="nav_community">社群</a>
-      <a href="#resources" data-section data-i18n="nav_resources">资源</a>
-      <a href="#projects" data-section data-i18n="nav_projects">项目</a>
-      <a href="#about" data-section data-i18n="nav_about">关于</a>
     </div>
   </nav>
 </header>
