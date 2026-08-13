@@ -414,6 +414,18 @@
     .about-bio{font-size:14.5px;color:var(--text-2);line-height:1.8}
     .about-more{margin-top:16px}
 
+    /* WeChat Card */
+    .wechat-card{
+      display:flex;flex-direction:column;align-items:center;
+      gap:16px;padding:32px 24px;text-align:center;
+    }
+    .wechat-desc{font-size:14.5px;color:var(--text-2);font-weight:500}
+    .wechat-card img{
+      width:220px;height:220px;border-radius:12px;
+      border:1px solid var(--border);background:#fff;
+    }
+    .wechat-note{font-size:13px;color:var(--text-3)}
+
     /* Footer */
     .footer{border-top:1px solid var(--border-light);padding:36px 0 40px;background:var(--bg-warm)}
     .footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px}
@@ -548,6 +560,7 @@
           <a href="#resources" data-section data-i18n="nav_resources">资源</a>
           <a href="#projects" data-section data-i18n="nav_projects">项目</a>
           <a href="#about" data-section data-i18n="nav_about">关于</a>
+          <a href="#wechat" data-section data-i18n="nav_wechat">微信</a>
         </div>
       </div>
 
@@ -861,6 +874,21 @@
       </div>
     </section>
 
+    <!-- ══════════ WeChat ══════════ -->
+    <section class="section reveal" id="wechat" aria-labelledby="wechat-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="wechat_eyebrow">WeChat</div>
+          <h2 class="section-h2" id="wechat-title" data-i18n="wechat_title">微信交流</h2>
+        </div>
+      </div>
+      <div class="card wechat-card">
+        <p class="wechat-desc" data-i18n="wechat_desc">扫码添加微信</p>
+        <img src="wechat-qrcode.jpg" alt="Huaxa125 微信二维码" width="220" height="220" decoding="async" loading="lazy">
+        <p class="wechat-note" data-i18n="wechat_note">备注：Huaxa</p>
+      </div>
+    </section>
+
   </div><!-- /container -->
 </main>
 
@@ -915,7 +943,7 @@
     zh: {
       skip_link: '跳到主要内容',
       nav_articles: '文章', nav_courses: '课程', nav_community: '社群',
-      nav_resources: '资源', nav_projects: '项目', nav_about: '关于',
+      nav_resources: '资源', nav_projects: '项目', nav_about: '关于', nav_wechat: '微信',
       hero_label: 'AI Builder · Building in Public',
       hero_title_1: '公开构建 AI 产品，',
       hero_title_2: '讲到你懂。',
@@ -957,6 +985,8 @@
       about_eyebrow: 'About', about_title: '关于我',
       about_bio: '大家好，我是 Huaxa125，一名 AI Builder。白天写代码，晚上写内容。从 2024 年开始在 X 上公开记录构建过程。相信「持续输出是最好的学习方式」，在这里与你一起成长。',
       learn_more_x: '在 X 了解更多 →',
+      wechat_eyebrow: 'WeChat', wechat_title: '微信交流',
+      wechat_desc: '扫码添加微信', wechat_note: '备注：Huaxa',
       popup_title: '留言给我', popup_desc: '有合作或想法？直接留言，我会收到邮件通知。',
       label_name: '姓名', label_email: '邮箱', label_message: '留言',
       btn_send: '发送留言', form_note: '提交即表示同意仅用该邮箱回复你'
@@ -964,7 +994,7 @@
     en: {
       skip_link: 'Skip to main content',
       nav_articles: 'Blog', nav_courses: 'Courses', nav_community: 'Community',
-      nav_resources: 'Resources', nav_projects: 'Projects', nav_about: 'About',
+      nav_resources: 'Resources', nav_projects: 'Projects', nav_about: 'About', nav_wechat: 'WeChat',
       hero_label: 'AI Builder · Building in Public',
       hero_title_1: 'Building AI products in public,',
       hero_title_2: 'made simple.',
@@ -1006,6 +1036,8 @@
       about_eyebrow: 'About', about_title: 'About Me',
       about_bio: 'Hi, I\'m Huaxa125, an AI Builder. I code by day, write by night. Since 2024 I\'ve been documenting my build-in-public journey on X. I believe "consistent output is the best way to learn." Let\'s grow together.',
       learn_more_x: 'Learn more on X →',
+      wechat_eyebrow: 'WeChat', wechat_title: 'Chat on WeChat',
+      wechat_desc: 'Scan to add me on WeChat', wechat_note: 'Note: Huaxa',
       popup_title: 'Send me a message', popup_desc: 'Collaboration or ideas? Drop a message here, I\'ll get an email notification.',
       label_name: 'Name', label_email: 'Email', label_message: 'Message',
       btn_send: 'Send Message', form_note: 'By submitting you agree to be contacted via this email only'
@@ -1013,7 +1045,7 @@
     ja: {
       skip_link: 'メインコンテンツへスキップ',
       nav_articles: 'ブログ', nav_courses: 'コース', nav_community: 'コミュニティ',
-      nav_resources: 'リソース', nav_projects: 'プロジェクト', nav_about: 'について',
+      nav_resources: 'リソース', nav_projects: 'プロジェクト', nav_about: 'について', nav_wechat: 'WeChat',
       hero_label: 'AI Builder · Building in Public',
       hero_title_1: 'AI製品を公開構築し、',
       hero_title_2: 'わかりやすく伝える。',
@@ -1055,6 +1087,8 @@
       about_eyebrow: 'About', about_title: '私について',
       about_bio: 'こんにちは、Huaxa125です。AI Builderです。昼はコード、夜は執筆。2024年からXでビルド・イン・パブリックの過程を記録しています。「継続的なアウトプットが最良の学習方法」と信じています。一緒に成長しましょう。',
       learn_more_x: 'Xでもっと詳しく →',
+      wechat_eyebrow: 'WeChat', wechat_title: 'WeChatで交流',
+      wechat_desc: 'QRコードをスキャンして友達追加', wechat_note: '備考：Huaxa',
       popup_title: 'メッセージを送る', popup_desc: 'コラボレーションやアイデア？ここにメッセージを残してください。メール通知を受け取ります。',
       label_name: '名前', label_email: 'メール', label_message: 'メッセージ',
       btn_send: '送信', form_note: '送信によりこのメールでのみ連絡することに同意します'
