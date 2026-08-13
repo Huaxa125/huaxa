@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Huaxa125 · AI Builder</title>
-  <meta name="description" content="Huaxa125 — AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发，在 X 上公开记录从 0 到 1 的构建过程。">
-  <meta name="keywords" content="AI, 自媒体, 内容创作, AI工具, 算法, Huaxa125, AI Builder">
+  <meta name="description" content="Huaxa125 — 公开构建 AI 产品，分享从 0 到 1 的增长过程。">
+  <meta name="keywords" content="AI, Builder, 内容创作, AI工具, 独立开发, Huaxa125">
   <meta name="author" content="Huaxa125">
-  <meta name="theme-color" content="#0B0B12">
+  <meta name="theme-color" content="#FAF6F1">
   <link rel="canonical" href="https://huaxa.pages.dev/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Huaxa125 · AI Builder">
-  <meta property="og:description" content="AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发，在 X 上公开构建。">
+  <meta property="og:description" content="公开构建 AI 产品，分享从 0 到 1 的增长过程。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://huaxa.pages.dev/">
   <meta property="og:image" content="https://huaxa.pages.dev/avatar.jpg">
@@ -21,68 +21,74 @@
   <meta property="og:site_name" content="Huaxa125">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Huaxa125">
   <meta name="twitter:creator" content="@Huaxa125">
   <meta name="twitter:title" content="Huaxa125 · AI Builder">
-  <meta name="twitter:description" content="AI 内容创作者与自媒体博主。专注 AI 应用开发、内容增长与独立开发。">
+  <meta name="twitter:description" content="公开构建 AI 产品，分享从 0 到 1 的增长过程。">
   <meta name="twitter:image" content="https://huaxa.pages.dev/avatar.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="avatar-320.jpg">
 
-  <!-- Fonts: preconnect + display=swap -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Huaxa125",
     "alternateName": "Huaxa",
-    "description": "AI 内容创作者与自媒体博主，专注 AI 应用开发与内容增长，在 X 上公开构建",
+    "description": "AI Builder，公开构建 AI 产品，分享从 0 到 1 的增长过程",
     "url": "https://huaxa.pages.dev/",
     "image": "https://huaxa.pages.dev/avatar.jpg",
-    "sameAs": [
-      "https://x.com/Huaxa125",
-      "https://github.com/Huaxa125"
-    ],
+    "sameAs": ["https://x.com/Huaxa125", "https://github.com/Huaxa125"],
     "jobTitle": "AI Builder",
-    "knowsAbout": ["Artificial Intelligence", "Content Creation", "Algorithm", "Independent Development"]
+    "knowsAbout": ["Artificial Intelligence", "Content Creation", "Independent Development"]
   }
   </script>
 
   <style>
     /* ════════════════════════════════════════
-       Design Tokens
+       Design Tokens — Warm Cream + Red Accent
        ════════════════════════════════════════ */
     :root {
-      --bg:            #0B0B12;
-      --surface:       #14141E;
-      --surface-hover: #1B1B28;
-      --border:        #21213A;
-      --border-hover:  #7B6FE8;
-      --accent:        #7B6FE8;
-      --accent-dim:    rgba(123,111,232,.12);
-      --accent-glow:   rgba(123,111,232,.25);
-      --gold:          #E8B94F;
-      --gold-dim:      rgba(232,185,79,.10);
-      --green:         #4ADE80;
-      --green-dim:     rgba(74,222,128,.10);
-      --red-dim:       rgba(239,68,68,.10);
-      --red:           #EF4444;
-      --text-1:        #EDEAF8;
-      --text-2:        #8888AB;
-      --text-3:        #50507A;
-      --radius:        12px;
-      --radius-sm:     8px;
-      --max-w:         720px;
-      --nav-h:         56px;
+      --bg:            #FAF6F1;
+      --bg-warm:       #F5F0EB;
+      --surface:       #FFFFFF;
+      --surface-hover: #FBF8F4;
+      --border:        #E8E2DC;
+      --border-light:  #EEE9E3;
+      --accent:        #D9362E;
+      --accent-hover: #C42E27;
+      --accent-dim:    rgba(217,54,46,0.08);
+      --accent-glow:   rgba(217,54,46,0.15);
+      --gold:          #D4940A;
+      --gold-dim:      rgba(212,148,10,0.10);
+      --green:         #2DA44E;
+      --green-dim:     rgba(45,164,78,0.10);
+      --blue:          #0969DA;
+      --blue-dim:      rgba(9,105,218,0.10);
+      --featured-bg:   #3D2528;
+      --featured-text: #F5E6E0;
+      --text-1:        #1A1A2E;
+      --text-2:        #555555;
+      --text-3:        #999999;
+      --text-muted:    #BBBBBB;
+      --radius:        16px;
+      --radius-sm:     10px;
+      --radius-xs:     6px;
+      --max-w:         1100px;
+      --nav-h:         60px;
+      --shadow-sm:     0 1px 3px rgba(26,26,46,.06);
+      --shadow-md:     0 4px 16px rgba(26,26,46,.08);
+      --shadow-lg:     0 8px 32px rgba(26,26,46,.12);
     }
 
     /* ════════════════════════════════════════
@@ -91,89 +97,90 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-      background:var(--bg);
-      color:var(--text-1);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
+      font-family:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:var(--bg);color:var(--text-1);
+      line-height:1.65;-webkit-font-smoothing:antialiased;
     }
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
     ul{list-style:none}
-    button{font:inherit}
+    button{font:inherit;cursor:pointer}
+    input,textarea{font:inherit}
 
-    /* Skip link */
     .skip-link{
       position:absolute;left:16px;top:-48px;z-index:200;
       padding:10px 16px;background:var(--accent);color:#fff;
-      border-radius:var(--radius-sm);font-size:14px;font-weight:600;
+      border-radius:var(--radius-xs);font-size:14px;font-weight:600;
       transition:top .2s;
     }
-    .skip-link:focus{top:12px;outline:2px solid #fff;outline-offset:2px}
+    .skip-link:focus{top:12px;outline:2px solid var(--accent);outline-offset:2px}
 
     /* ════════════════════════════════════════
        Layout
        ════════════════════════════════════════ */
     .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-    .section{padding:64px 0;border-top:1px solid var(--border);scroll-margin-top:calc(var(--nav-h,64px) + 16px)}
+    .section{padding:64px 0;scroll-margin-top:calc(var(--nav-h) + 20px)}
 
-    /* ════════════════════════════════════════
-       Scroll-reveal (used by JS)
-       ════════════════════════════════════════ */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    /* Scroll reveal */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
     .reveal.visible{opacity:1;transform:translateY(0)}
     .reveal-delay-1{transition-delay:.1s}
     .reveal-delay-2{transition-delay:.2s}
-    .reveal-delay-3{transition-delay:.3s}
 
     /* ════════════════════════════════════════
        Navigation
        ════════════════════════════════════════ */
     .nav{
       position:sticky;top:0;z-index:100;
-      background:rgba(11,11,18,.80);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--border);
+      background:rgba(250,246,241,.88);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border-light);
     }
     .nav-inner{
       max-width:var(--max-w);margin:0 auto;padding:0 24px;
       height:var(--nav-h);
       display:flex;align-items:center;justify-content:space-between;
+      gap:20px;
     }
     .nav-brand{
       display:flex;align-items:center;gap:10px;
-      font-family:'Syne',sans-serif;font-size:15px;font-weight:700;
-      letter-spacing:.01em;
+      font-weight:700;font-size:16px;letter-spacing:-.01em;
+      flex-shrink:0;
     }
     .nav-avatar{
-      width:28px;height:28px;border-radius:50%;
-      background:var(--accent-dim);border:1.5px solid var(--accent);
-      overflow:hidden;display:flex;align-items:center;justify-content:center;
-      color:var(--accent);font-size:13px;font-weight:800;flex-shrink:0;
+      width:30px;height:30px;border-radius:50%;
+      overflow:hidden;border:1.5px solid var(--border);
+      background:var(--surface);flex-shrink:0;
     }
-    .nav-links{display:flex;gap:24px}
+    .nav-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .nav-center{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
+    .nav-links{display:flex;gap:6px}
     .nav-links a{
-      font-size:13.5px;color:var(--text-2);
-      transition:color .2s;position:relative;
+      font-size:14px;font-weight:500;color:var(--text-2);
+      padding:6px 14px;border-radius:20px;
+      transition:color .2s,background .2s;
     }
-    .nav-links a:hover{color:var(--text-1)}
-    .nav-links a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
-    .nav-links a.active{color:var(--accent)}
-    .nav-links a.active::after{
-      content:'';position:absolute;bottom:-4px;left:0;right:0;
-      height:2px;border-radius:1px;background:var(--accent);
+    .nav-links a:hover{color:var(--text-1);background:var(--accent-dim)}
+    .nav-links a.active{color:var(--accent);background:var(--accent-dim)}
+
+    /* Language Switcher */
+    .lang-switch{display:flex;gap:2px;background:var(--border-light);border-radius:20px;padding:2px}
+    .lang-btn{
+      padding:4px 12px;border:none;background:transparent;
+      border-radius:18px;font-size:12px;font-weight:600;
+      color:var(--text-3);cursor:pointer;transition:all .2s;
     }
+    .lang-btn:hover{color:var(--text-2)}
+    .lang-btn.active{background:var(--surface);color:var(--accent);box-shadow:var(--shadow-sm)}
+
+    .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
 
     /* Hamburger */
     .hamburger{
       display:none;flex-direction:column;gap:5px;
       background:none;border:none;cursor:pointer;
-      padding:6px;border-radius:6px;
-      transition:background .2s;
+      padding:6px;border-radius:var(--radius-xs);
     }
-    .hamburger:hover{background:var(--accent-dim)}
-    .hamburger:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .hamburger span{
       display:block;width:22px;height:2px;
       background:var(--text-2);border-radius:2px;
@@ -186,220 +193,188 @@
     /* ════════════════════════════════════════
        Hero
        ════════════════════════════════════════ */
-    .hero{padding:72px 0 64px;position:relative;overflow:hidden}
-    .hero-glow{
-      position:absolute;inset:0;
-      background:radial-gradient(ellipse 65% 55% at 50% -10%,rgba(123,111,232,.14) 0%,transparent 70%);
-      pointer-events:none;
+    .hero{padding:56px 0 48px}
+    .hero-label{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:12px;font-weight:600;color:var(--accent);
+      letter-spacing:.03em;margin-bottom:16px;
     }
-    .hero-body{position:relative}
-
-    .hero-avatar{
-      width:80px;height:80px;border-radius:50%;
-      border:2px solid var(--border);background:var(--surface);
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Syne',sans-serif;font-weight:800;font-size:28px;
-      color:var(--accent);margin-bottom:22px;overflow:hidden;
+    .hero-label::before{
+      content:'';width:6px;height:6px;border-radius:50%;
+      background:var(--accent);display:inline-block;
     }
-    .hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-    .hero-avatar .initials{display:none}
-
-    .hero-status{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:12.5px;color:var(--text-2);margin-bottom:18px;letter-spacing:.03em;
-    }
-    .status-dot{
-      width:7px;height:7px;border-radius:50%;
-      background:var(--green);box-shadow:0 0 8px var(--green);
-      animation:pulse 2.4s ease-in-out infinite;flex-shrink:0;
-    }
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-
     .hero-title{
-      font-family:'Syne',sans-serif;font-size:42px;font-weight:800;
-      line-height:1.13;letter-spacing:-.025em;margin-bottom:16px;
+      font-family:'Noto Sans SC',sans-serif;
+      font-size:clamp(32px,5vw,52px);font-weight:900;
+      line-height:1.15;letter-spacing:-.02em;margin-bottom:16px;
+      color:var(--text-1);
     }
     .hero-title em{font-style:normal;color:var(--accent)}
-
-    .hero-desc{
-      font-size:16px;color:var(--text-2);
-      max-width:460px;line-height:1.75;margin-bottom:30px;
+    .hero-subtitle{
+      font-size:16px;color:var(--text-2);max-width:520px;line-height:1.7;margin-bottom:28px;
     }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-    .hero-actions{
-      display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;
-    }
+    /* Buttons */
     .btn-primary{
       display:inline-flex;align-items:center;gap:7px;
-      padding:10px 20px;background:var(--accent);color:#fff;
-      border-radius:var(--radius-sm);font-size:14px;font-weight:600;
-      transition:opacity .2s,transform .15s;
+      padding:11px 22px;background:var(--accent);color:#fff;
+      border-radius:var(--radius-xs);font-size:14px;font-weight:600;
+      border:none;transition:background .2s,transform .15s;
     }
-    .btn-primary:hover{opacity:.85;transform:translateY(-1px)}
+    .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
     .btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
     .btn-secondary{
       display:inline-flex;align-items:center;gap:7px;
-      padding:10px 20px;background:transparent;color:var(--text-1);
-      border:1px solid var(--border);border-radius:var(--radius-sm);
+      padding:11px 22px;background:var(--surface);color:var(--text-1);
+      border:1px solid var(--border);border-radius:var(--radius-xs);
       font-size:14px;font-weight:500;
       transition:border-color .2s,background .2s;
     }
-    .btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
+    .btn-secondary:hover{border-color:var(--text-muted);background:var(--surface-hover)}
     .btn-secondary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
     .btn-accent{
-      display:inline-flex;align-items:center;justify-content:center;gap:7px;
-      padding:10px 20px;background:var(--accent);color:#fff;
-      border:1px solid var(--accent);border-radius:var(--radius-sm);
-      font-size:14px;font-weight:600;cursor:pointer;
-      transition:opacity .2s,transform .15s,background .2s;
+      display:inline-flex;align-items:center;justify-content:center;gap:6px;
+      padding:8px 18px;background:var(--accent);color:#fff;
+      border:none;border-radius:var(--radius-xs);
+      font-size:13px;font-weight:600;cursor:pointer;
+      transition:background .2s,transform .15s;
     }
-    .btn-accent:hover{opacity:.9;transform:translateY(-1px)}
-    .btn-accent:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .btn-accent:hover{background:var(--accent-hover);transform:translateY(-1px)}
     .btn-accent:disabled{opacity:.55;cursor:not-allowed;transform:none}
+    .btn-sm{padding:6px 14px;font-size:12px}
 
-    /* 联系表单面板 */
-    .contact-panel{
-      max-width:480px;margin:0 auto;
-      background:var(--surface);
-      border:1px solid var(--border);border-radius:var(--radius);
-      padding:28px;box-shadow:0 8px 32px rgba(0,0,0,.12),0 2px 6px rgba(0,0,0,.08);
-    }
-    .contact-form{display:flex;flex-direction:column;gap:14px}
-    .form-row{display:flex;flex-direction:column;gap:6px}
-    .form-row label{font-size:13px;color:var(--text-2)}
-    .form-row input,.form-row textarea{
-      font:inherit;font-size:14px;color:var(--text-1);
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius-sm);padding:10px 12px;
-      transition:border-color .2s,box-shadow .2s;
-    }
-    .form-row input:focus,.form-row textarea:focus{
-      outline:none;border-color:var(--accent);
-      box-shadow:0 0 0 3px var(--accent-dim);
-    }
-    .form-row textarea{resize:vertical;min-height:110px}
-    .form-status{font-size:13px;min-height:18px}
-    .form-status.ok{color:var(--success,#1d9e75)}
-    .form-status.err{color:var(--danger,#e24b4a)}
-    .form-note{font-size:12px;color:var(--text-3);margin-top:-4px}
-
-    /* Newsletter 订阅表单 */
-    .newsletter-form{display:flex;gap:8px;margin-top:12px}
-    .newsletter-form input{
-      flex:1;font:inherit;font-size:13px;color:var(--text-1);
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius-sm);padding:8px 10px;
-      transition:border-color .2s,box-shadow .2s;
-      min-width:0;
-    }
-    .newsletter-form input:focus{
-      outline:none;border-color:var(--accent);
-      box-shadow:0 0 0 3px var(--accent-dim);
-    }
-    .newsletter-form input::placeholder{color:var(--text-3)}
-    .btn-sm{padding:6px 16px;font-size:13px}
-
+    /* Hero Stats */
     .hero-stats{
-      display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--border);
+      display:flex;gap:40px;padding-top:28px;border-top:1px solid var(--border-light);margin-top:32px;
     }
-    .stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:700}
-    .stat-label{font-size:12px;color:var(--text-3);margin-top:3px}
+    .stat-num{font-weight:700;font-size:22px;color:var(--text-1)}
+    .stat-label{font-size:12.5px;color:var(--text-3);margin-top:2px}
 
     /* ════════════════════════════════════════
        Section Headings
        ════════════════════════════════════════ */
+    .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px}
     .eyebrow{
-      font-size:11px;font-weight:600;letter-spacing:.12em;
+      font-size:11.5px;font-weight:700;letter-spacing:.1em;
       text-transform:uppercase;color:var(--accent);margin-bottom:8px;
     }
     .section-h2{
-      font-family:'Syne',sans-serif;font-size:26px;font-weight:700;
-      letter-spacing:-.01em;margin-bottom:28px;
+      font-family:'Noto Sans SC',sans-serif;font-size:24px;font-weight:700;
+      letter-spacing:-.01em;color:var(--text-1);
     }
+    .view-all{
+      font-size:13px;font-weight:500;color:var(--accent);
+      cursor:pointer;display:inline-flex;align-items:center;gap:4px;
+      transition:gap .2s;
+    }
+    a.view-all:hover{gap:8px}
 
     /* ════════════════════════════════════════
-       Card
+       Featured Card (dark)
+       ════════════════════════════════════════ */
+    .featured-card{
+      background:var(--featured-bg);color:var(--featured-text);
+      border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;
+      margin-bottom:48px;
+    }
+    .featured-card::after{
+      content:'BUILDER';position:absolute;right:-10px;bottom:-20px;
+      font-size:120px;font-weight:900;color:rgba(255,255,255,.04);
+      letter-spacing:.1em;pointer-events:none;line-height:1;
+    }
+    .featured-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .featured-title{
+      font-family:'Noto Sans SC',sans-serif;
+      font-size:clamp(20px,3vw,28px);font-weight:700;
+      line-height:1.3;margin-bottom:14px;
+    }
+    .featured-desc{font-size:14.5px;color:rgba(245,230,224,.8);line-height:1.65;max-width:560px;margin-bottom:20px}
+    .featured-meta{font-size:12.5px;color:rgba(245,230,224,.5)}
+
+    /* ════════════════════════════════════════
+       Cards (light)
        ════════════════════════════════════════ */
     .card{
       display:block;background:var(--surface);
-      border:1px solid var(--border);border-radius:var(--radius);
-      padding:22px 24px;transition:border-color .25s,background .25s,transform .2s;
+      border:1px solid var(--border-light);border-radius:var(--radius);
+      padding:22px;transition:border-color .25s,box-shadow .25s,transform .2s;
     }
-    a.card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px)}
+    a.card:hover{border-color:var(--border);box-shadow:var(--shadow-md);transform:translateY(-3px)}
     a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .card-static{cursor:default}
-    .card-static:hover{border-color:var(--border);background:var(--surface);transform:none}
-    .card-grid{display:grid;gap:14px}
-    .card-grid-2{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+    .card-static:hover{border-color:var(--border-light);box-shadow:none;transform:none}
+    .card-grid{display:grid;gap:16px}
+    .card-grid-2{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    .card-grid-3{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 
-    /* ════════════════════════════════════════
-       Tags
-       ════════════════════════════════════════ */
+    /* Tags */
     .tag{
       display:inline-flex;align-items:center;
-      padding:3px 9px;border-radius:4px;
-      font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+      padding:3px 10px;border-radius:20px;
+      font-size:11px;font-weight:600;letter-spacing:.02em;
     }
     .tag-accent{background:var(--accent-dim);color:var(--accent)}
     .tag-gold{background:var(--gold-dim);color:var(--gold)}
     .tag-green{background:var(--green-dim);color:var(--green)}
-    .tag-red{background:var(--red-dim);color:var(--red)}
-    .tag-muted{background:rgba(80,80,122,.18);color:var(--text-3)}
+    .tag-blue{background:var(--blue-dim);color:var(--blue)}
+    .tag-muted{background:#F0EBE5;color:var(--text-3)}
 
-    /* ════════════════════════════════════════
-       Arrow Link
-       ════════════════════════════════════════ */
+    /* Arrow Link */
     .link-arrow{
-      display:inline-flex;align-items:center;gap:5px;
+      display:inline-flex;align-items:center;gap:4px;
       font-size:13px;font-weight:500;color:var(--accent);transition:gap .2s;
     }
-    a.link-arrow:hover{gap:9px}
-    .link-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+    a.link-arrow:hover{gap:8px}
     .link-soon{color:var(--text-3);pointer-events:none;cursor:default}
 
     /* ════════════════════════════════════════
-       Books / Free Resources
+       Books / Resources
        ════════════════════════════════════════ */
-    .book-card{display:flex;gap:18px;align-items:flex-start}
+    .book-card{display:flex;gap:16px;align-items:flex-start}
     .book-cover{
-      width:58px;height:78px;border-radius:6px;
+      width:56px;height:74px;border-radius:8px;
       flex-shrink:0;display:flex;align-items:center;
-      justify-content:center;font-size:24px;
+      justify-content:center;font-size:22px;
     }
-    .book-cover-violet{background:linear-gradient(135deg,#7B6FE8,#4F46E5)}
-    .book-cover-gold{background:linear-gradient(135deg,#E8B94F,#D97706)}
-    .book-cover-green{background:linear-gradient(135deg,#4ADE80,#059669)}
-    .book-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:5px}
+    .book-cover-violet{background:linear-gradient(135deg,#D9362E,#B33029)}
+    .book-cover-gold{background:linear-gradient(135deg,#D4940A,#B87A08)}
+    .book-title{font-weight:700;font-size:15px;margin-bottom:5px}
     .book-desc{font-size:13px;color:var(--text-2);line-height:1.55;margin-bottom:8px}
-    .book-meta{font-size:11.5px;color:var(--text-3);margin-bottom:12px}
+    .book-meta{font-size:11.5px;color:var(--text-3);margin-bottom:10px}
     .resource-download{display:inline-flex;margin-top:2px;text-decoration:none}
 
-    /* ════════════════════════════════════════
-       Courses
-       ════════════════════════════════════════ */
+    /* Courses */
     .course-card{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
     .course-info{flex:1}
     .course-header{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-    .course-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+    .course-title{font-weight:700;font-size:16px}
     .course-desc{font-size:13.5px;color:var(--text-2);line-height:1.55}
-    .course-price{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--gold);white-space:nowrap}
+    .course-price{font-weight:700;font-size:17px;color:var(--gold);white-space:nowrap}
 
-    /* ════════════════════════════════════════
-       Community
-       ════════════════════════════════════════ */
+    /* Community */
     .community-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
-    .community-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+    .community-name{font-weight:700;font-size:15px}
     .community-desc{font-size:13.5px;color:var(--text-2);line-height:1.6}
     .community-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
 
-    /* ════════════════════════════════════════
-       Articles
-       ════════════════════════════════════════ */
+    /* Newsletter inline form */
+    .newsletter-form{display:flex;gap:8px;margin-top:12px}
+    .newsletter-form input{
+      flex:1;font-size:13px;color:var(--text-1);
+      background:var(--bg);border:1px solid var(--border);
+      border-radius:var(--radius-xs);padding:8px 12px;
+      transition:border-color .2s;min-width:0;
+    }
+    .newsletter-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+    .newsletter-form input::placeholder{color:var(--text-muted)}
+
+    /* Articles */
     .article-item{
-      display:flex;align-items:flex-start;gap:20px;
-      padding:16px 0;border-bottom:1px solid var(--border);
+      display:flex;align-items:flex-start;gap:18px;
+      padding:16px 0;border-bottom:1px solid var(--border-light);
       transition:padding-left .2s;
     }
     .article-item:last-child{border-bottom:none}
@@ -409,7 +384,7 @@
     .article-item-static{cursor:default}
     .article-date{
       font-size:12px;color:var(--text-3);
-      width:88px;flex-shrink:0;padding-top:3px;
+      width:80px;flex-shrink:0;padding-top:3px;
     }
     .article-info{flex:1}
     .article-title{
@@ -419,646 +394,900 @@
     .article-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
     .article-tag{
       font-size:11px;color:var(--text-3);
-      background:var(--surface);border:1px solid var(--border);
-      padding:2px 8px;border-radius:4px;
+      background:var(--bg);border:1px solid var(--border-light);
+      padding:2px 8px;border-radius:20px;
     }
 
-    /* ════════════════════════════════════════
-       Projects
-       ════════════════════════════════════════ */
+    /* Projects */
     .project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-    .project-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+    .project-name{font-weight:700;font-size:16px}
     .project-desc{font-size:13.5px;color:var(--text-2);line-height:1.6}
     .project-footer{margin-top:14px}
 
-    /* ════════════════════════════════════════
-       About
-       ════════════════════════════════════════ */
-    .about-layout{display:flex;gap:22px;align-items:flex-start}
+    /* About */
+    .about-layout{display:flex;gap:20px;align-items:flex-start}
     .about-avatar{
       width:64px;height:64px;border-radius:50%;
-      border:2px solid var(--border);background:var(--surface);
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Syne',sans-serif;font-weight:800;font-size:22px;
-      color:var(--accent);flex-shrink:0;overflow:hidden;
+      overflow:hidden;flex-shrink:0;border:2px solid var(--border);
     }
     .about-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .about-bio{font-size:14.5px;color:var(--text-2);line-height:1.8}
     .about-more{margin-top:16px}
 
-    /* ════════════════════════════════════════
-       View All
-       ════════════════════════════════════════ */
-    .view-all{margin-top:20px}
-
-    /* ════════════════════════════════════════
-       Footer
-       ════════════════════════════════════════ */
-    .footer{border-top:1px solid var(--border);padding:36px 0 40px}
+    /* Footer */
+    .footer{border-top:1px solid var(--border-light);padding:36px 0 40px;background:var(--bg-warm)}
     .footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px}
     .footer-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
     .footer-links a{font-size:13px;color:var(--text-3);transition:color .2s}
     .footer-links a:hover{color:var(--text-1)}
-    .footer-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-    .footer-copy{font-size:12.5px;color:var(--text-3)}
+    .footer-copy{font-size:12.5px;color:var(--text-muted)}
+
+    /* Content visibility for perf */
+    #resources,#courses,#community,#articles,#projects,#about{
+      content-visibility:auto;contain-intrinsic-size:auto 400px;
+    }
+
+    /* Form shared styles */
+    .form-row{display:flex;flex-direction:column;gap:5px}
+    .form-row label{font-size:12.5px;font-weight:500;color:var(--text-2)}
+    .form-row input,.form-row textarea{
+      font-size:14px;color:var(--text-1);
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius-xs);padding:10px 12px;
+      transition:border-color .2s,box-shadow .2s;
+    }
+    .form-row input:focus,.form-row textarea:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px var(--accent-dim);
+    }
+    .form-row textarea{resize:vertical;min-height:90px}
+    .form-status{font-size:13px;min-height:18px}
+    .form-status.ok{color:var(--green)}
+    .form-status.err{color:var(--accent)}
+    .form-note{font-size:11.5px;color:var(--text-3);margin-top:-2px}
 
     /* ════════════════════════════════════════
-       Content-visibility (performance)
+       Floating Contact Popup
        ════════════════════════════════════════ */
-    #resources,#courses,#community,#articles,#projects,#about{
-      content-visibility:auto;
-      contain-intrinsic-size:auto 400px;
+    .contact-popup{
+      position:fixed;right:20px;bottom:24px;z-index:150;
+      width:340px;background:var(--surface);
+      border:1px solid var(--border);border-radius:var(--radius);
+      box-shadow:var(--shadow-lg);
+      padding:22px;
+      transform:translateY(120%);opacity:0;
+      transition:transform .4s cubic-bezier(.16,1,.3,1), opacity .35s ease;
+      pointer-events:none;
     }
+    .contact-popup.visible{
+      transform:translateY(0);opacity:1;pointer-events:auto;
+    }
+    .popup-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+    .popup-title{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+    .popup-icon{
+      width:28px;height:28px;border-radius:50%;
+      background:var(--accent-dim);display:flex;align-items:center;justify-content:center;
+      color:var(--accent);font-size:14px;flex-shrink:0;
+    }
+    .popup-close{
+      width:28px;height:28px;border-radius:50%;border:none;
+      background:var(--bg);color:var(--text-3);
+      font-size:16px;display:flex;align-items:center;justify-content:center;
+      cursor:pointer;transition:all .2s;flex-shrink:0;
+    }
+    .popup-close:hover{background:var(--border);color:var(--text-1)}
+    .popup-desc{font-size:13px;color:var(--text-2);margin-bottom:16px;line-height:1.55}
+    .popup-form{display:flex;flex-direction:column;gap:10px}
+    .popup-form textarea{min-height:70px;font-size:13px}
+
+    /* Popup toggle button (when closed) */
+    .contact-fab{
+      position:fixed;right:20px;bottom:24px;z-index:149;
+      width:52px;height:52px;border-radius:50%;
+      background:var(--accent);color:#fff;border:none;
+      font-size:22px;display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow-md);
+      cursor:pointer;transition:transform .2s,box-shadow .2s;
+    }
+    .contact-fab:hover{transform:scale(1.08);box-shadow:var(--shadow-lg)}
+    .contact-fab.hidden{opacity:0;pointer-events:none;transform:scale(.8)}
 
     /* ════════════════════════════════════════
        Responsive
        ════════════════════════════════════════ */
-    @media(max-width:620px){
-      .hero-title{font-size:30px}
-      .card-grid-2{grid-template-columns:1fr}
-      .course-card{flex-direction:column}
-      .book-card{flex-direction:column}
-      .hero-stats{gap:20px}
-      .about-layout{flex-direction:column}
-
+    @media(max-width:768px){
+      .nav-center{display:none}
       .hamburger{display:flex}
-      .nav-links{
+      .mobile-nav{
         position:fixed;top:var(--nav-h);left:0;right:0;
         flex-direction:column;gap:0;
-        background:rgba(11,11,18,.96);backdrop-filter:blur(18px);
-        border-bottom:1px solid var(--border);
-        padding:8px 0;display:none;
+        background:rgba(250,246,241,.97);backdrop-filter:blur(16px);
+        border-bottom:1px solid var(--border-light);
+        padding:12px 0;display:none;
+        z-index:99;
       }
-      .nav-links.open{display:flex}
-      .nav-links a{
-        padding:12px 24px;font-size:15px;
+      .mobile-nav.open{display:flex}
+      .mobile-nav a{
+        padding:12px 24px;font-size:15px;font-weight:500;
+        color:var(--text-2);border-bottom:1px solid var(--border-light);
       }
-      .nav-links a.active::after{display:none}
-      .nav-links a.active{background:var(--accent-dim)}
+      .mobile-nav a:hover{background:var(--accent-dim);color:var(--accent)}
+
+      .hero-title{font-size:28px}
+      .card-grid-2{grid-template-columns:1fr}
+      .card-grid-3{grid-template-columns:1fr}
+      .course-card{flex-direction:column}
+      .book-card{flex-direction:column}
+      .hero-stats{gap:24px;flex-wrap:wrap}
+      .about-layout{flex-direction:column}
+      .featured-card{padding:24px}
+      .featured-card::after{font-size:80px}
+
+      .contact-popup{
+        right:12px;left:12px;width:auto;bottom:12px;
+      }
+      .contact-fab{right:16px;bottom:16px;}
     }
 
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .status-dot{animation:none}
       .reveal{opacity:1;transform:none;transition:none}
       *,*::before,*::after{transition:none!important;animation:none!important}
+      .contact-popup{transition:none}
     }
   </style>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<a class="skip-link" data-i18n="skip_link">跳到主要内容</a>
 
-  <!-- ══════════ Navigation ══════════ -->
-  <header>
-    <nav class="nav" aria-label="主导航">
-      <div class="nav-inner">
-        <a href="/" class="nav-brand" aria-label="Huaxa125 首页">
-          <span class="nav-avatar" aria-hidden="true">H</span>
-          Huaxa125
-        </a>
-        <button class="hamburger" type="button" id="nav-toggle"
-          aria-label="打开导航菜单" aria-expanded="false" aria-controls="primary-nav">
-          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-        </button>
-        <div class="nav-links" id="primary-nav" role="navigation" aria-label="页面导航">
-          <a href="#articles" data-section>文章</a>
-          <a href="#courses" data-section>课程</a>
-          <a href="#community" data-section>社群</a>
-          <a href="#projects" data-section>项目</a>
-          <a href="#about" data-section>关于</a>
-          <a href="#contact" data-section>联系</a>
+<!-- ══════════ Navigation ══════════ -->
+<header>
+  <nav class="nav" aria-label="主导航">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="Huaxa125 首页">
+        <span class="nav-avatar"><img src="avatar-160.jpg" alt="" width="30" height="30" decoding="async"></span>
+        Huaxa125
+      </a>
+
+      <div class="nav-center">
+        <div class="nav-links" role="navigation">
+          <a href="#articles" data-section data-i18n="nav_articles">文章</a>
+          <a href="#courses" data-section data-i18n="nav_courses">课程</a>
+          <a href="#community" data-section data-i18n="nav_community">社群</a>
+          <a href="#resources" data-section data-i18n="nav_resources">资源</a>
+          <a href="#projects" data-section data-i18n="nav_projects">项目</a>
+          <a href="#about" data-section data-i18n="nav_about">关于</a>
         </div>
       </div>
-    </nav>
-  </header>
 
-  <main id="main">
-    <div class="container">
-
-      <!-- ══════════ Hero ══════════ -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-body reveal">
-
-          <div class="hero-avatar">
-            <picture>
-              <source type="image/webp" srcset="avatar-160.webp 160w, avatar-320.webp 320w" sizes="80px">
-              <img
-                src="avatar-320.jpg"
-                srcset="avatar-160.jpg 160w, avatar-320.jpg 320w"
-                sizes="80px"
-                width="80" height="80"
-                alt="Huaxa125 的头像"
-                decoding="async"
-                fetchpriority="high"
-                onerror="this.style.display='none'">
-            </picture>
-            <span class="initials" aria-hidden="true">H</span>
-          </div>
-
-          <div class="hero-status">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span>online · building in public</span>
-          </div>
-
-          <h1 class="hero-title" id="hero-title">
-            AI 内容创作者<br>
-            &amp; <em>自媒体博主</em>
-          </h1>
-
-          <p class="hero-desc">
-            专注 AI 应用开发与内容增长，在 X 上公开记录从 0 到 1 的构建过程。
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer" class="btn-primary">
-              Follow @Huaxa125 →
-            </a>
-            <a href="#about" class="btn-secondary">
-              关于我
-            </a>
-          </div>
-
-          <div class="hero-stats" role="list" aria-label="关键数据">
-            <div role="listitem">
-              <div class="stat-num">2.8K</div>
-              <div class="stat-label">X 关注者</div>
-            </div>
-            <div role="listitem">
-              <div class="stat-num">36</div>
-              <div class="stat-label">发布文章</div>
-            </div>
-            <div role="listitem">
-              <div class="stat-num">2</div>
-              <div class="stat-label">筹备课程</div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ══════════ Free Resources ══════════ -->
-      <section class="section reveal" id="resources" aria-labelledby="resources-title">
-        <div class="eyebrow">Free Resources</div>
-        <h2 class="section-h2" id="resources-title">免费资源</h2>
-        <div class="card-grid card-grid-2">
-
-          <div class="card book-card" aria-label="AI 提示词工程手册，可免费下载">
-            <div class="book-cover book-cover-violet" aria-hidden="true">📘</div>
-            <div>
-              <div class="book-title">AI 提示词工程手册</div>
-              <div class="book-desc">从零开始掌握 AI 提示词设计，50+ 实战模板</div>
-              <div class="book-meta">48 页 · 中文 · PDF</div>
-              <a class="btn btn-primary btn-sm resource-download" href="/resources/ai-prompt-engineering-handbook.pdf" download>免费下载</a>
-            </div>
-          </div>
-
-          <div class="card book-card" aria-label="自媒体增长清单，可免费下载">
-            <div class="book-cover book-cover-gold" aria-hidden="true">📙</div>
-            <div>
-              <div class="book-title">自媒体增长清单</div>
-              <div class="book-desc">30 天内容创作者成长路线图，每天一个可执行动作</div>
-              <div class="book-meta">33 页 · 中文 · PDF</div>
-              <a class="btn btn-primary btn-sm resource-download" href="/resources/self-media-growth-checklist.pdf" download>免费下载</a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ══════════ Courses ══════════ -->
-      <section class="section reveal" id="courses" aria-labelledby="courses-title">
-        <div class="eyebrow">Courses</div>
-        <h2 class="section-h2" id="courses-title">课程</h2>
-        <div class="card-grid">
-
-          <div class="card course-card card-static" aria-label="AI 应用开发实战，即将上线">
-            <div class="course-info">
-              <div class="course-header">
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-              <div class="course-title">AI 应用开发实战</div>
-              <div class="course-desc">用 Python + LLM 构建生产级 AI 应用，从原型到部署全流程</div>
-            </div>
-            <div class="course-price">¥299</div>
-          </div>
-
-          <div class="card course-card card-static" aria-label="自媒体算法拆解，即将上线">
-            <div class="course-info">
-              <div class="course-header">
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-              <div class="course-title">自媒体算法拆解</div>
-              <div class="course-desc">深度解析 X / 小红书 / 抖音推荐机制，用算法思维做内容</div>
-            </div>
-            <div class="course-price">¥199</div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ══════════ Community ══════════ -->
-      <section class="section reveal" id="community" aria-labelledby="community-title">
-        <div class="eyebrow">Community</div>
-        <h2 class="section-h2" id="community-title">社群 · 一起成长</h2>
-        <div class="card-grid">
-
-          <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
-            <div class="community-header">
-              <div class="community-name">AI Builders 内部圈</div>
-              <span class="tag tag-gold">¥99/月</span>
-            </div>
-            <div class="community-desc">
-              每周一次线上讨论、独家 AI 工具评测、项目协作机会。已聚集 120+ 创作者与开发者。
-            </div>
-            <div class="community-footer">
-              <span class="link-arrow">在 X 了解加入方式 →</span>
-            </div>
-          </a>
-
-          <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
-            <div class="community-header">
-              <div class="community-name">免费 X 互促群</div>
-              <span class="tag tag-accent">免费</span>
-            </div>
-            <div class="community-desc">
-              在 X 上互相关注、互相转评，打破冷启动。每周主题讨论，一起 Build in Public。
-            </div>
-            <div class="community-footer">
-              <span class="link-arrow">前往 X 参与 →</span>
-            </div>
-          </a>
-
-          <div class="card card-static" aria-label="Newsletter 订阅">
-            <div class="community-header">
-              <div class="community-name">Newsletter</div>
-              <span class="tag tag-accent">已上线</span>
-            </div>
-            <div class="community-desc">
-              每周一封邮件，分享 AI 工具评测、内容增长策略与独立开发思考。
-            </div>
-            <form id="newsletter-form" class="newsletter-form" autocomplete="off">
-              <input
-                type="email"
-                id="nl-email"
-                placeholder="your@email.com"
-                required
-                aria-label="订阅邮箱"
-              />
-              <button type="submit" id="nl-submit" class="btn btn-accent btn-sm">
-                订阅
-              </button>
-            </form>
-            <div id="nl-status" class="form-status" aria-live="polite"></div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ══════════ Articles ══════════ -->
-      <section class="section reveal" id="articles" aria-labelledby="articles-title">
-        <div class="eyebrow">The Blog</div>
-        <h2 class="section-h2" id="articles-title">最新文章</h2>
-        <p style="font-size:13.5px;color:var(--text-3);margin:-12px 0 20px">以下选题正在整理中；完整讨论与更新请关注 X。</p>
-
-        <div class="article-list" role="list">
-          <article class="article-item article-item-static" role="listitem">
-            <time class="article-date" datetime="2026-06-19">Jun 19, 2026</time>
-            <div class="article-info">
-              <div class="article-title">用 Claude 自动搭建一套完整的 API 服务</div>
-              <div class="article-tags">
-                <span class="article-tag">AI</span>
-                <span class="article-tag">教程</span>
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="article-item article-item-static" role="listitem">
-            <time class="article-date" datetime="2026-06-12">Jun 12, 2026</time>
-            <div class="article-info">
-              <div class="article-title">我的 X 账号从 0 到 2.8K 关注者的内容策略复盘</div>
-              <div class="article-tags">
-                <span class="article-tag">自媒体</span>
-                <span class="article-tag">增长</span>
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="article-item article-item-static" role="listitem">
-            <time class="article-date" datetime="2026-06-05">Jun 5, 2026</time>
-            <div class="article-info">
-              <div class="article-title">用 n8n 搭建 AI 自动化工作流，省掉 80% 重复劳动</div>
-              <div class="article-tags">
-                <span class="article-tag">工具</span>
-                <span class="article-tag">自动化</span>
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="article-item article-item-static" role="listitem">
-            <time class="article-date" datetime="2026-05-28">May 28, 2026</time>
-            <div class="article-info">
-              <div class="article-title">大模型推理能力对比：Claude vs GPT 实际场景评测</div>
-              <div class="article-tags">
-                <span class="article-tag">AI</span>
-                <span class="article-tag">评测</span>
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="article-item article-item-static" role="listitem">
-            <time class="article-date" datetime="2026-05-20">May 20, 2026</time>
-            <div class="article-info">
-              <div class="article-title">内容创作者应该关注的 5 个 AI 趋势（2026 年中）</div>
-              <div class="article-tags">
-                <span class="article-tag">内容创作</span>
-                <span class="article-tag">趋势</span>
-                <span class="tag tag-muted">即将上线</span>
-              </div>
-            </div>
-          </article>
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="语言切换">
+          <button class="lang-btn active" data-lang="zh" aria-pressed="true">中</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="ja" aria-pressed="false">日</button>
         </div>
 
-        <div class="view-all">
-          <a href="https://x.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 X 阅读更多 →</a>
-        </div>
-      </section>
-
-      <!-- ══════════ Projects ══════════ -->
-      <section class="section reveal" id="projects" aria-labelledby="projects-title">
-        <div class="eyebrow">Building</div>
-        <h2 class="section-h2" id="projects-title">在做的项目</h2>
-        <div class="card-grid">
-
-          <div class="card card-static" aria-label="AI 写作助手，进行中">
-            <div class="project-header">
-              <div class="project-name">AI 写作助手</div>
-              <span class="tag tag-accent">In Progress</span>
-            </div>
-            <div class="project-desc">基于 LLM 的中文内容创作辅助工具，支持多平台风格适配与 SEO 优化。</div>
-            <div class="project-footer">
-              <span class="link-arrow link-soon">详情页筹备中</span>
-            </div>
-          </div>
-
-          <div class="card card-static" aria-label="Content Growth Dashboard，进行中">
-            <div class="project-header">
-              <div class="project-name">Content Growth Dashboard</div>
-              <span class="tag tag-accent">In Progress</span>
-            </div>
-            <div class="project-desc">多平台内容数据聚合面板，追踪文章/推文表现，自动生成增长洞察报告。</div>
-            <div class="project-footer">
-              <span class="link-arrow link-soon">详情页筹备中</span>
-            </div>
-          </div>
-
-        </div>
-        <div class="view-all">
-          <a href="https://github.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 GitHub 查看公开仓库 →</a>
-        </div>
-      </section>
-
-      <!-- ══════════ About ══════════ -->
-      <section class="section reveal" id="about" aria-labelledby="about-title">
-        <div class="eyebrow">About</div>
-        <h2 class="section-h2" id="about-title">关于我</h2>
-        <div class="card">
-          <div class="about-layout">
-            <div class="about-avatar" aria-hidden="true">
-              <picture>
-                <source type="image/webp" srcset="avatar-160.webp">
-                <img src="avatar-160.jpg" width="64" height="64" alt="" decoding="async" loading="lazy">
-              </picture>
-            </div>
-            <div>
-              <p class="about-bio">
-                大家好，我是 Huaxa125，一名 AI 内容创作者与自媒体博主。<br><br>
-                白天写代码，晚上写内容。从 2024 年开始在 X 上公开记录构建过程，分享 AI 应用开发、内容增长策略与独立开发思考。<br><br>
-                相信「持续输出是最好的学习方式」，在这里与你一起成长。
-              </p>
-              <div class="about-more">
-                <a href="https://x.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer">在 X 了解更多 →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div><!-- /container -->
-
-      <!-- ══════════ Contact ══════════ -->
-      <section class="section reveal" id="contact" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="eyebrow">Contact</div>
-          <h2 class="section-h2" id="contact-title">聊聊？</h2>
-          <p style="font-size:13.5px;color:var(--text-3);margin:-12px 0 20px">有合作、想法或问题，直接留言，我会发到邮箱。</p>
-          <div class="contact-panel">
-            <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-row">
-              <label for="cf-name">姓名</label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="60" required>
-            </div>
-            <div class="form-row">
-              <label for="cf-email">邮箱</label>
-              <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="120" required>
-            </div>
-            <div class="form-row">
-              <label for="cf-message">留言</label>
-              <textarea id="cf-message" name="message" maxlength="5000" required></textarea>
-            </div>
-            <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
-            <button class="btn-primary" type="submit" id="cf-submit">发送留言</button>
-            <p class="form-note">提交即表示同意我们仅用该邮箱回复你。</p>
-          </form>
-        </div>
-        </div><!-- /container -->
-      </section>
-
-  </main>
-
-  <!-- ══════════ Footer ══════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <nav class="footer-links" aria-label="页脚链接">
-        <a href="#articles">文章</a>
-        <a href="#courses">课程</a>
-        <a href="#community">社群</a>
-        <a href="#projects">项目</a>
-        <a href="#about">关于</a>
-        <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-        <a href="https://github.com/Huaxa125" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
-      <div class="footer-copy">
-        &copy; 2026 Huaxa125 · built with ♥ · <a href="https://huaxa.pages.dev/" style="color:inherit">huaxa.pages.dev</a>
+        <button class="hamburger" type="button" id="nav-toggle"
+          aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </footer>
 
-  <script defer>
-  /* ════════════════════════════════════════
-     Scroll-based nav highlight
-     ════════════════════════════════════════ */
-  (function(){
-    const sections = document.querySelectorAll('main [id]');
-    const navLinks = document.querySelectorAll('[data-section]');
-    const OFFSET = 120;
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#articles" data-section data-i18n="nav_articles">文章</a>
+      <a href="#courses" data-section data-i18n="nav_courses">课程</a>
+      <a href="#community" data-section data-i18n="nav_community">社群</a>
+      <a href="#resources" data-section data-i18n="nav_resources">资源</a>
+      <a href="#projects" data-section data-i18n="nav_projects">项目</a>
+      <a href="#about" data-section data-i18n="nav_about">关于</a>
+    </div>
+  </nav>
+</header>
 
-    function updateActiveLink(){
-      let current = '';
-      for(const sec of sections){
-        if(sec.getBoundingClientRect().top < OFFSET) current = sec.id;
+<main id="main">
+  <div class="container">
+
+    <!-- ══════════ Hero ══════════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-body reveal">
+
+        <div class="hero-label" data-i18n="hero_label">AI Builder · Building in Public</div>
+
+        <h1 class="hero-title" id="hero-title">
+          <span data-i18n="hero_title_1">公开构建 AI 产品，</span><br>
+          <em data-i18n="hero_title_2">讲到你懂。</em>
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="hero_desc">
+          从零到一，用 AI 工具做产品、写内容、搞增长。每一步都公开记录。
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Follow @Huaxa125 →
+          </a>
+          <a href="#about" class="btn-secondary" data-i18n="hero_btn_about">关于我</a>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="关键数据">
+          <div role="listitem">
+            <div class="stat-num">2.8K</div>
+            <div class="stat-label" data-i18n="stat_followers">X 关注者</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-num">36</div>
+            <div class="stat-label" data-i18n="stat_articles">发布文章</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-num">2</div>
+            <div class="stat-label" data-i18n="stat_courses">筹备课程</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ Featured Card ══════════ -->
+    <section class="reveal" aria-labelledby="featured-title">
+      <div class="featured-card">
+        <div class="featured-tags">
+          <span class="tag tag-green" data-i18n="featured_tag_1">产品发布</span>
+          <span class="tag tag-muted" data-i18n="featured_tag_2">已验证</span>
+          <span class="tag tag-gold" data-i18n="featured_tag_3">免费</span>
+        </div>
+        <h2 class="featured-title" id="featured-title" data-i18n="featured_title">
+          Huaxa 个人品牌站：不仅展示我是谁，还把 AI Builder 的完整思考过程开源出来
+        </h2>
+        <p class="featured-desc" data-i18n="featured_desc">
+          包含 AI 提示词工程手册、自媒体���长清单、联系表单后端、Newsletter 订阅系统。全部源码开放，可直接复用。
+        </p>
+        <div class="featured-meta" data-i18n="featured_meta">持续更新 · Cloudflare Pages 部署</div>
+      </div>
+    </section>
+
+    <!-- ══════════ Free Resources ══════════ -->
+    <section class="section reveal" id="resources" aria-labelledby="resources-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="resources_eyebrow">Free Resources</div>
+          <h2 class="section-h2" id="resources-title" data-i18n="resources_title">免费资源</h2>
+        </div>
+      </div>
+      <div class="card-grid card-grid-2">
+
+        <div class="card book-card" aria-label="AI 提示词工程手册">
+          <div class="book-cover book-cover-violet" aria-hidden="true">📘</div>
+          <div>
+            <div class="book-title" data-i18n="resource_1_title">AI 提示词工程手册</div>
+            <div class="book-desc" data-i18n="resource_1_desc">从零掌握 AI 提示词设计，50+ 实战模板</div>
+            <div class="book-meta">48 页 · 中文 · PDF</div>
+            <a class="btn btn-primary btn-sm resource-download" href="/resources/ai-prompt-engineering-handbook.pdf" download data-i18n="btn_download">免费下载</a>
+          </div>
+        </div>
+
+        <div class="card book-card" aria-label="自媒体增长清单">
+          <div class="book-cover book-cover-gold" aria-hidden="true">📙</div>
+          <div>
+            <div class="book-title" data-i18n="resource_2_title">自媒体增长清单</div>
+            <div class="book-desc" data-i18n="resource_2_desc">30 天内容创作者成长路线图</div>
+            <div class="book-meta">33 页 · 中文 · PDF</div>
+            <a class="btn btn-primary btn-sm resource-download" href="/resources/self-media-growth-checklist.pdf" download data-i18n="btn_download">免费下载</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ Courses ══════════ -->
+    <section class="section reveal" id="courses" aria-labelledby="courses-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="courses_eyebrow">Courses</div>
+          <h2 class="section-h2" id="courses-title" data-i18n="courses_title">课程</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+
+        <div class="card course-card card-static">
+          <div class="course-info">
+            <div class="course-header">
+              <span class="tag tag-muted" data-i18n="coming_soon">即将上线</span>
+            </div>
+            <div class="course-title" data-i18n="course_1_title">AI 应用开发实战</div>
+            <div class="course-desc" data-i18n="course_1_desc">Python + LLM 构建生产级 AI 应用，从原型到部署全流程</div>
+          </div>
+          <div class="course-price">¥299</div>
+        </div>
+
+        <div class="card course-card card-static">
+          <div class="course-info">
+            <div class="course-header">
+              <span class="tag tag-muted" data-i18n="coming_soon">即将上线</span>
+            </div>
+            <div class="course-title" data-i18n="course_2_title">自媒体算法拆解</div>
+            <div class="course-desc" data-i18n="course_2_desc">深度解析推荐机制，用算法思维做内容</div>
+          </div>
+          <div class="course-price">¥199</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ Community ══════════ -->
+    <section class="section reveal" id="community" aria-labelledby="community-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="community_eyebrow">Community</div>
+          <h2 class="section-h2" id="community-title" data-i18n="community_title">社群 · 一起成长</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+
+        <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="community-header">
+            <div class="community-name" data-i18n="comm_1_name">AI Builders 内部圈</div>
+            <span class="tag tag-gold">¥99/<span data-i18n="month">月</span></span>
+          </div>
+          <div class="community-desc" data-i18n="comm_1_desc">每周线上讨论、独家 AI 工具评测、项目协作机会</div>
+          <div class="community-footer">
+            <span class="link-arrow" data-i18n="learn_more">了解加入方式 →</span>
+          </div>
+        </a>
+
+        <a href="https://x.com/Huaxa125" class="card" target="_blank" rel="noopener noreferrer">
+          <div class="community-header">
+            <div class="community-name" data-i18n="comm_2_name">免费 X 互促群</div>
+            <span class="tag tag-green" data-i18n="free">免费</span>
+          </div>
+          <div class="community-desc" data-i18n="comm_2_desc">互相关注、互相转评，打破冷启动</div>
+          <div class="community-footer">
+            <span class="link-arrow" data-i18n="go_join">前往参与 →</span>
+          </div>
+        </a>
+
+        <div class="card card-static">
+          <div class="community-header">
+            <div class="community-name">Newsletter</div>
+            <span class="tag tag-accent" data-i18n="live">已上线</span>
+          </div>
+          <div class="community-desc" data-i18n="newsletter_desc">每周一封邮件，AI 工具评测与独立开发思考</div>
+          <form id="newsletter-form" class="newsletter-form" autocomplete="off">
+            <input type="email" id="nl-email" placeholder="your@email.com" required aria-label="订阅邮箱">
+            <button type="submit" id="nl-submit" class="btn btn-accent btn-sm" data-i18n="subscribe">订阅</button>
+          </form>
+          <div id="nl-status" class="form-status" aria-live="polite"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ Articles ══════════ -->
+    <section class="section reveal" id="articles" aria-labelledby="articles-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="articles_eyebrow">The Blog</div>
+          <h2 class="section-h2" id="articles-title" data-i18n="articles_title">最新文章</h2>
+        </div>
+        <a href="https://x.com/Huaxa125" class="view-all" target="_blank" rel="noopener noreferrer" data-i18n="view_all">全部 →</a>
+      </div>
+
+      <div class="article-list" role="list">
+        <article class="article-item article-item-static" role="listitem">
+          <time class="article-date" datetime="2026-06-19">Jun 19</time>
+          <div class="article-info">
+            <div class="article-title" data-i18n="art_1_title">用 Claude 自动搭建一套完整的 API 服务</div>
+            <div class="article-tags"><span class="article-tag">AI</span><span class="article-tag" data-i18n="tutorial">教程</span><span class="tag tag-muted" data-i18n="coming_soon">即将上线</span></div>
+          </div>
+        </article>
+
+        <article class="article-item article-item-static" role="listitem">
+          <time class="article-date" datetime="2026-06-12">Jun 12</time>
+          <div class="article-info">
+            <div class="article-title" data-i18n="art_2_title">X 账号从 0 到 2.8K 的内容策略复盘</div>
+            <div class="article-tags"><span class="article-tag" data-i18n="social_media">自媒体</span><span class="article-tag" data-i18n="growth">增长</span><span class="tag tag-muted" data-i18n="coming_soon">即将上线</span></div>
+          </div>
+        </article>
+
+        <article class="article-item article-item-static" role="listitem">
+          <time class="article-date" datetime="2026-06-05">Jun 05</time>
+          <div class="article-info">
+            <div class="article-title" data-i18n="art_3_title">用 n8n 搭建 AI 自动化工作流</div>
+            <div class="article-tags"><span class="article-tag" data-i18n="tools">工具</span><span class="article-tag" data-i18n="automation">自动化</span><span class="tag tag-muted" data-i18n="coming_soon">即将上线</span></div>
+          </div>
+        </article>
+
+        <article class="article-item article-item-static" role="listitem">
+          <time class="article-date" datetime="2026-05-28">May 28</time>
+          <div class="article-info">
+            <div class="article-title" data-i18n="art_4_title">大模型推理能力对比：Claude vs GPT</div>
+            <div class="article-tags"><span class="article-tag">AI</span><span class="article-tag" data-i18n="review">评测</span><span class="tag tag-muted" data-i18n="coming_soon">即将上线</span></div>
+          </div>
+        </article>
+
+        <article class="article-item article-item-static" role="listitem">
+          <time class="article-date" datetime="2026-05-20">May 20</time>
+          <div class="article-info">
+            <div class="article-title" data-i18n="art_5_title">内容创作者应关注的 5 个 AI 趋势</div>
+            <div class="article-tags"><span class="article-tag" data-i18n="content_creation">内容创作</span><span class="article-tag" data-i18n="trends">趋势</span><span class="tag tag-muted" data-i18n="coming_soon">即将上线</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ Projects ══════════ -->
+    <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="projects_eyebrow">Building</div>
+          <h2 class="section-h2" id="projects-title" data-i18n="projects_title">在做的项目</h2>
+        </div>
+        <a href="https://github.com/Huaxa125" class="view-all" target="_blank" rel="noopener noreferrer" data-i18n="view_github">GitHub →</a>
+      </div>
+      <div class="card-grid card-grid-2">
+
+        <div class="card card-static">
+          <div class="project-header">
+            <div class="project-name" data-i18n="proj_1_name">AI 写作助手</div>
+            <span class="tag tag-accent">In Progress</span>
+          </div>
+          <div class="project-desc" data-i18n="proj_1_desc">基于 LLM 的中文内容创作辅助工具，支持多平台风格适配</div>
+          <div class="project-footer">
+            <span class="link-arrow link-soon" data-i18n="detail_soon">详情筹备中</span>
+          </div>
+        </div>
+
+        <div class="card card-static">
+          <div class="project-header">
+            <div class="project-name" data-i18n="proj_2_name">Content Growth Dashboard</div>
+            <span class="tag tag-accent">In Progress</span>
+          </div>
+          <div class="project-desc" data-i18n="proj_2_desc">多平台数据聚合面板，自动生成增长洞察报告</div>
+          <div class="project-footer">
+            <span class="link-arrow link-soon" data-i18n="detail_soon">详情筹备中</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════ About ══════════ -->
+    <section class="section reveal" id="about" aria-labelledby="about-title">
+      <div class="section-header">
+        <div>
+          <div class="eyebrow" data-i18n="about_eyebrow">About</div>
+          <h2 class="section-h2" id="about-title" data-i18n="about_title">关于我</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="about-layout">
+          <div class="about-avatar">
+            <picture>
+              <source type="image/webp" srcset="avatar-160.webp">
+              <img src="avatar-160.jpg" width="64" height="64" alt="" decoding="async" loading="lazy">
+            </picture>
+          </div>
+          <div>
+            <p class="about-bio" data-i18n="about_bio">
+              大家好，我是 Huaxa125，一名 AI Builder。<br><br>
+              白天写代码，晚上写内容。从 2024 年开始在 X 上公开记录构建过程。<br><br>
+              相信「持续输出是最好的学习方式」，在这里与你一起成长。
+            </p>
+            <div class="about-more">
+              <a href="https://x.com/Huaxa125" class="link-arrow" target="_blank" rel="noopener noreferrer" data-i18n="learn_more_x">在 X ��解更多 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<!-- ══════════ Floating Contact Popup ══════════ -->
+<div class="contact-popup" id="contact-popup" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
+  <div class="popup-header">
+    <div class="popup-title">
+      <span class="popup-icon">✉️</span>
+      <span data-i18n="popup_title">留言给我</span>
+    </div>
+    <button class="popup-close" id="popup-close" aria-label="关闭">×</button>
+  </div>
+  <p class="popup-desc" data-i18n="popup_desc">有合作或想法？直接留言，我会收到邮件通知。</p>
+  <form class="popup-form" id="contact-form" novalidate>
+    <div class="form-row">
+      <label for="cf-name" data-i18n="label_name">姓名</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+    </div>
+    <div class="form-row">
+      <label for="cf-email" data-i18n="label_email">邮箱</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="120" required>
+    </div>
+    <div class="form-row">
+      <label for="cf-message" data-i18n="label_message">留言</label>
+      <textarea id="cf-message" name="message" maxlength="5000" required></textarea>
+    </div>
+    <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+    <button class="btn-primary" type="submit" id="cf-submit" style="width:100%;justify-content:center" data-i18n="btn_send">发送留言</button>
+    <p class="form-note" data-i18n="form_note">提交即表示同意仅用该邮箱回复你</p>
+  </form>
+</div>
+
+<button class="contact-fab" id="contact-fab" aria-label="打开留言弹窗">✉️</button>
+
+<!-- ══════════ Footer ══════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footer-links" aria-label="页脚链接">
+      <a href="#articles" data-i18n="nav_articles">文章</a>
+      <a href="#courses" data-i18n="nav_courses">课程</a>
+      <a href="#community" data-i18n="nav_community">社群</a>
+      <a href="#projects" data-i18n="nav_projects">项目</a>
+      <a href="#about" data-i18n="nav_about">关于</a>
+      <a href="https://x.com/Huaxa125" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://github.com/Huaxa125" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+    <div class="footer-copy">
+      &copy; 2026 Huaxa125 · built with ♥ · <a href="https://huaxa.pages.dev/" style="color:inherit">huaxa.pages.dev</a>
+    </div>
+  </div>
+</footer>
+
+<script defer>
+(function(){
+  /* ─── i18n Translations ─── */
+  const i18n = {
+    zh: {
+      skip_link: '跳到主要内容',
+      nav_articles: '文章', nav_courses: '课程', nav_community: '社群',
+      nav_resources: '资源', nav_projects: '项目', nav_about: '关于',
+      hero_label: 'AI Builder · Building in Public',
+      hero_title_1: '公开构建 AI 产品，',
+      hero_title_2: '讲到你懂。',
+      hero_desc: '从零到一，用 AI 工具做产品、写内容、搞增长。每一步都公开记录。',
+      hero_btn_about: '关于我',
+      stat_followers: 'X 关注者', stat_articles: '发布文章', stat_courses: '筹备课程',
+      featured_tag_1: '产品发布', featured_tag_2: '已验证', featured_tag_3: '免费',
+      featured_title: 'Huaxa 个人品牌站：不仅展示我是谁，还把 AI Builder 的完整思考过程开源出来',
+      featured_desc: '包含 AI 提示词工程手册、自媒体增长清单、联系表单后端、Newsletter 订阅系统。全部源码开放，可直接复用。',
+      featured_meta: '持续更新 · Cloudflare Pages 部署',
+      resources_eyebrow: 'Free Resources', resources_title: '免费资源',
+      resource_1_title: 'AI 提示词工程手册', resource_1_desc: '从零掌握 AI 提示词设计，50+ 实战模板',
+      resource_2_title: '自媒体增长清单', resource_2_desc: '30 天内容创作者成长路线图',
+      btn_download: '免费下载',
+      courses_eyebrow: 'Courses', courses_title: '课程',
+      coming_soon: '即将上线',
+      course_1_title: 'AI 应用开发实战', course_1_desc: 'Python + LLM 构建生产级 AI 应用，从原型到部署全流程',
+      course_2_title: '自媒体算法拆解', course_2_desc: '深度解析推荐机制，用算法思维做内容',
+      community_eyebrow: 'Community', community_title: '社群 · 一起成长',
+      month: '月', free: '免费', live: '已上线',
+      newsletter_desc: '每周一封邮件，AI 工具评测与独立开发思考',
+      subscribe: '订阅',
+      comm_1_name: 'AI Builders 内部圈', comm_1_desc: '每周线上讨论、独家 AI 工具评测、项目协作机会',
+      comm_2_name: '免费 X 互促群', comm_2_desc: '互相关注、互相转评，打破冷启动',
+      learn_more: '了解加入方式 →', go_join: '前往参与 →',
+      articles_eyebrow: 'The Blog', articles_title: '最新文章', view_all: '全部 →',
+      tutorial: '教程', social_media: '自媒体', growth: '增长',
+      tools: '工具', automation: '自动化', review: '评测',
+      content_creation: '内容创作', trends: '趋势',
+      art_1_title: '用 Claude 自动搭建一套完整的 API 服务',
+      art_2_title: 'X 账号从 0 到 2.8K 的内容策略复盘',
+      art_3_title: '用 n8n 搭建 AI 自动化工作流',
+      art_4_title: '大模型推理能力对比：Claude vs GPT',
+      art_5_title: '内容创作者应关注的 5 个 AI 趋势',
+      projects_eyebrow: 'Building', projects_title: '在做的项目', view_github: 'GitHub →',
+      proj_1_name: 'AI 写作助手', proj_1_desc: '基于 LLM 的中文内容创作辅助工具，支持多平台风格适配',
+      proj_2_name: 'Content Growth Dashboard', proj_2_desc: '多平台数据聚合面板，自动生成增长洞察报告',
+      detail_soon: '详情筹备中',
+      about_eyebrow: 'About', about_title: '关于我',
+      about_bio: '大家好，我是 Huaxa125，一名 AI Builder。<br><br>白天写代码，晚上写内容。从 2024 年开始在 X 上公开记录构建过程。<br><br>相信「持续输出是最好的学习方式」，在这里与你一起成长。',
+      learn_more_x: '在 X 了解更多 →',
+      popup_title: '留言给我', popup_desc: '有合作或想法？直接留言，我会收到邮件通知。',
+      label_name: '姓名', label_email: '邮箱', label_message: '留言',
+      btn_send: '发送留言', form_note: '提交即表示同意仅用该邮箱回复你'
+    },
+    en: {
+      skip_link: 'Skip to main content',
+      nav_articles: 'Blog', nav_courses: 'Courses', nav_community: 'Community',
+      nav_resources: 'Resources', nav_projects: 'Projects', nav_about: 'About',
+      hero_label: 'AI Builder · Building in Public',
+      hero_title_1: 'Building AI products in public,',
+      hero_title_2: 'made simple.',
+      hero_desc: 'From zero to one — building with AI tools, creating content, driving growth. Every step documented.',
+      hero_btn_about: 'About Me',
+      stat_followers: 'X Followers', stat_articles: 'Articles', stat_courses: 'Courses',
+      featured_tag_1: 'Launched', featured_tag_2: 'Verified', featured_tag_3: 'Free',
+      featured_title: 'Huaxa Personal Brand Site: Not just who I am — the complete AI Builder thinking process, open sourced',
+      featured_desc: 'Includes AI Prompt Engineering Handbook, Growth Checklist, Contact Backend, Newsletter System. All source code open and reusable.',
+      featured_meta: 'Continuously updated · Hosted on Cloudflare Pages',
+      resources_eyebrow: 'Free Resources', resources_title: 'Free Resources',
+      resource_1_title: 'AI Prompt Engineering Handbook', resource_1_desc: 'Master prompt design from scratch, 50+ templates',
+      resource_2_title: 'Self-Media Growth Checklist', resource_2_desc: '30-day creator growth roadmap',
+      btn_download: 'Download Free',
+      courses_eyebrow: 'Courses', courses_title: 'Courses',
+      coming_soon: 'Coming Soon',
+      course_1_title: 'AI App Development Bootcamp', course_1_desc: 'Build production-grade AI apps with Python + LLM, prototype to deployment',
+      course_2_title: 'Social Media Algorithm Decoded', course_2_desc: 'Deep-dive into recommendation algorithms for content strategy',
+      community_eyebrow: 'Community', community_title: 'Community · Grow Together',
+      month: 'mo', free: 'Free', live: 'Live',
+      newsletter_desc: 'Weekly email — AI tool reviews & indie dev insights',
+      subscribe: 'Subscribe',
+      comm_1_name: 'AI Builders Inner Circle', comm_1_desc: 'Weekly discussions, exclusive AI tool reviews, collab opportunities',
+      comm_2_name: 'Free X Cross-promo Group', comm_2_desc: 'Follow-for-follow, cross-engage, break the cold start',
+      learn_more: 'Learn how to join →', go_join: 'Join now →',
+      articles_eyebrow: 'The Blog', articles_title: 'Latest Articles', view_all: 'View All →',
+      tutorial: 'Tutorial', social_media: 'Social Media', growth: 'Growth',
+      tools: 'Tools', automation: 'Automation', review: 'Review',
+      content_creation: 'Content Creation', trends: 'Trends',
+      art_1_title: 'Auto-build a Complete API Service with Claude',
+      art_2_title: 'My X Account: 0 to 2.8K Followers Content Strategy Retrospective',
+      art_3_title: 'Build AI Automation Workflows with n8n',
+      art_4_title: 'LLM Inference Comparison: Claude vs GPT Real-world Benchmark',
+      art_5_title: '5 AI Trends Every Content Creator Should Watch (Mid-2026)',
+      projects_eyebrow: 'Building', projects_title: 'Current Projects', view_github: 'GitHub →',
+      proj_1_name: 'AI Writing Assistant', proj_1_desc: 'LLM-powered Chinese writing tool with multi-platform style adaptation',
+      proj_2_name: 'Growth Dashboard', proj_2_desc: 'Multi-platform analytics dashboard with auto-generated growth insights',
+      detail_soon: 'Details coming soon',
+      about_eyebrow: 'About', about_title: 'About Me',
+      about_bio: 'Hi, I\'m Huaxa125, an AI Builder.<br><br>I code by day, write by night. Since 2024 I\'ve been documenting my build-in-public journey on X.<br><br>I believe "consistent output is the best way to learn." Let\'s grow together.',
+      learn_more_x: 'Learn more on X →',
+      popup_title: 'Send me a message', popup_desc: 'Collaboration or ideas? Drop a message here, I\'ll get an email notification.',
+      label_name: 'Name', label_email: 'Email', label_message: 'Message',
+      btn_send: 'Send Message', form_note: 'By submitting you agree to be contacted via this email only'
+    },
+    ja: {
+      skip_link: 'メインコンテンツへスキップ',
+      nav_articles: 'ブログ', nav_courses: 'コース', nav_community: 'コミュニティ',
+      nav_resources: 'リソース', nav_projects: 'プロジェクト', nav_about: 'について',
+      hero_label: 'AI Builder · Building in Public',
+      hero_title_1: 'AI製品を公開構築し、',
+      hero_title_2: 'わかりやすく伝える。',
+      hero_desc: 'ゼロからイチまで。AIツールで製品を作り、コンテンツを書き、成長を駆動する。すべてのステップを公開記録。',
+      hero_btn_about: '私について',
+      stat_followers: 'X フォロワー', stat_articles: '記事', stat_courses: 'コース',
+      featured_tag_1: 'リリース済', featured_tag_2: '検証済', featured_tag_3: '無料',
+      featured_title: 'Huaxa パーソナルブランドサイト：誰かであるだけでなく、AI Builderの完全な思考プロセスをオープンソース化',
+      featured_desc: 'AIプロンプトエンジニアリングハンドブック、成長チェックリスト、問い合わせバックエンド、ニュースレターシステムを含む。全ソースコードが公開・再利用可能。',
+      featured_meta: '継続更新中 · Cloudflare Pagesでホスト',
+      resources_eyebrow: '無料リソース', resources_title: '無料リソース',
+      resource_1_title: 'AIプロンプトエンジニアリングハンドブック', resource_1_desc: 'ゼロからプロンプト設計をマスター、50+テンプレート',
+      resource_2_title: 'セルフメディア成長チェックリスト', resource_2_desc: '30日クリエイター成長ロードマップ',
+      btn_download: '無料ダウンロード',
+      courses_eyebrow: 'コース', courses_title: 'コース',
+      coming_soon: '近日公開',
+      course_1_title: 'AIアプリ開発実践', course_1_desc: 'Python + LLMで本番級AIアプリを構築、プロトタイプからデプロイまで',
+      course_2_title: 'SNSアルゴリズム解読', course_2_desc: 'レコメンドアルゴリズムを深く理解し、コンテンツ戦略に活かす',
+      community_eyebrow: 'コミュニティ', community_title: 'コミュニティ · 一緒に成長',
+      month: '月', free: '無料', live: '稼働中',
+      newsletter_desc: '週次メール — AIツールレビューとインディーデベロッパーの洞察',
+      subscribe: '購読',
+      comm_1_name: 'AI Builders内部サークル', comm_1_desc: '週次ディスカッション、独占AIツールレビュー、協力機会',
+      comm_2_name: '無料X相互促進グループ', comm_2_desc: 'フォローし合い、エンゲージし合い、コールドスタートを突破',
+      learn_more: '参加方法を確認 →', go_join: '参加する →',
+      articles_eyebrow: 'ブログ', articles_title: '最新記事', view_all: 'すべて見る →',
+      tutorial: 'チュートリアル', social_media: 'SNS', growth: '成長',
+      tools: 'ツール', automation: '自動化', review: 'レビュー',
+      content_creation: 'コンテンツ制作', trends: 'トレンド',
+      art_1_title: 'Claudeで完全なAPIサービスを自動構築',
+      art_2_title: 'Xアカウント：0から2.8Kフォロワーのコンテンツ戦略振り返り',
+      art_3_title: 'n8nでAI自動化ワークフローを構築',
+      art_4_title: '大規模言語モデル推論比較：Claude vs GPT 実環境ベンチマーク',
+      art_5_title: 'コンテンツクリエーターが注目すべき5つのAIトレンド（2026年中盤）',
+      projects_eyebrow: '構築中', projects_title: '進行中のプロジェクト', view_github: 'GitHub →',
+      proj_1_name: 'AIライティングアシスタント', proj_1_desc: 'LLMベースの中国語ライティング補助ツール、複数プラットフォームスタイル対応',
+      proj_2_name: 'Growth Dashboard', proj_2_desc: 'マルチプラットフォーム分析ダッシュボード、自動生成成長インサイト',
+      detail_soon: '詳細は近日公開',
+      about_eyebrow: 'About', about_title: '私について',
+      about_bio: 'こんにちは、Huaxa125です。AI Builderです。<br><br>昼はコード、夜は執筆。2024年からXでビルド・イン・パブリックの過程を記録しています。<br><br>「継続的なアウトプットが最良の学習方法」と信じています。一緒に成長しましょう。',
+      learn_more_x: 'Xでもっと詳しく →',
+      popup_title: 'メッセージを送る', popup_desc: 'コラボレーションやアイデア？ここにメッセージを残してください。メール通知を受け取ります。',
+      label_name: '名前', label_email: 'メール', label_message: 'メッセージ',
+      btn_send: '送信', form_note: '送信によりこのメールでのみ連絡することに同意します'
+    }
+  };
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+    try { localStorage.setItem('huaxa_lang', lang); } catch(e){}
+  }
+
+  // Init language
+  const savedLang = localStorage.getItem('huaxa_lang') || 'zh';
+  applyLang(savedLang);
+
+  // Language switcher clicks
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  /* ─── Scroll-based nav highlight ─── */
+  const sections = document.querySelectorAll('main [id]');
+  const navLinks = document.querySelectorAll('[data-section]');
+  const OFFSET = 130;
+
+  function updateActiveLink() {
+    let current = '';
+    for(const sec of sections) {
+      if(sec.getBoundingClientRect().top < OFFSET) current = sec.id;
+    }
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if(!ticking){ requestAnimationFrame(() => { updateActiveLink(); ticking=false; }); ticking=true; }
+  }, {passive:true});
+  updateActiveLink();
+
+  /* ─── Scroll Reveal ─── */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(prefersReduced){
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  /* ─── Hamburger menu ─── */
+  const hamburger = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  if(hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ─── Floating Contact Popup ─── */
+  const popup = document.getElementById('contact-popup');
+  const fab = document.getElementById('contact-fab');
+  const closeBtn = document.getElementById('popup-close');
+  let popupShown = false;
+  const POPUP_TRIGGER_SCROLL = 400;
+
+  function showPopup() {
+    if(popupShown) return;
+    popupShown = true;
+    fab?.classList.add('hidden');
+    popup?.classList.add('visible');
+    popup?.setAttribute('aria-hidden', 'false');
+  }
+
+  function hidePopup() {
+    popup?.classList.remove('visible');
+    fab?.classList.remove('hidden');
+    popup?.setAttribute('aria-hidden', 'true');
+  }
+
+  // Show after scrolling past hero
+  let scrollTriggered = false;
+  window.addEventListener('scroll', () => {
+    if(!scrollTriggered && window.scrollY > POPUP_TRIGGER_SCROLL) {
+      scrollTriggered = true;
+      setTimeout(showPopup, 800);
+    }
+  }, {passive:true});
+
+  // FAB click opens popup
+  fab?.addEventListener('click', showPopup);
+  closeBtn?.addEventListener('click', hidePopup);
+
+  /* ─── Contact Form (POST /api/contact) ─── */
+  const form = document.getElementById('contact-form');
+  if(form) {
+    const status = document.getElementById('cf-status');
+    const submitBtn = document.getElementById('cf-submit');
+    form.addEventListener('submit', async(e) => {
+      e.preventDefault();
+      const payload = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim()
+      };
+      if(!payload.name || !payload.email || !payload.message) {
+        const lang = localStorage.getItem('huaxa_lang') || 'zh';
+        status.textContent = i18n[lang].label_name + ' / ' + i18n[lang].label_email + ' / ' + i18n[lang].label_message + ' ' + (lang==='zh'?'请填完':'please fill in');
+        status.className = 'form-status err';
+        return;
       }
-      navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
-    }
-
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if(!ticking){ requestAnimationFrame(() => { updateActiveLink(); ticking=false; }); ticking=true; }
-    }, {passive:true});
-    updateActiveLink();
-
-    /* ════════════════════════════════════════
-       Scroll reveal (Intersection Observer)
-       ════════════════════════════════════════ */
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(prefersReduced){
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+      submitBtn.disabled = true;
+      const lang = localStorage.getItem('huaxa_lang') || 'zh';
+      status.textContent = lang==='zh'?'发送中…':lang==='ja'?'送信中…':'Sending…';
+      status.className = 'form-status';
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    }
+        const data = await res.json().catch(() => ({}));
+        if(res.ok && data.ok) {
+          status.textContent = data.msg || (lang==='zh'?'已收到，我会尽快回复':lang==='ja'?'受付しました': 'Received, will reply ASAP');
+          status.className = 'form-status ok';
+          form.reset();
+        } else {
+          status.textContent = data.error || (lang==='zh'?'发送失败，请稍后再试':lang==='ja'?'送信失敗': 'Failed, please retry');
+          status.className = 'form-status err';
+        }
+      } catch(err) {
+        status.textContent = lang==='zh'?'网络错误':lang==='ja'?'ネットワークエラー':'Network error';
+        status.className = 'form-status err';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
 
-    /* ════════════════════════════════════════
-       Hamburger menu
-       ════════════════════════════════════════ */
-    const hamburger = document.getElementById('nav-toggle');
-    const mobileNav = document.getElementById('primary-nav');
-    if(hamburger && mobileNav){
-      hamburger.addEventListener('click', () => {
-        const isOpen = mobileNav.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', String(isOpen));
-        hamburger.setAttribute('aria-label', isOpen ? '关闭导航菜单' : '打开导航菜单');
-      });
-
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileNav.classList.remove('open');
-          hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          hamburger.setAttribute('aria-label', '打开导航菜单');
+  /* ─── Newsletter Form (POST /api/subscribe) ─── */
+  const nlForm = document.getElementById('newsletter-form');
+  if(nlForm) {
+    const nlStatus = document.getElementById('nl-status');
+    const nlSubmit = document.getElementById('nl-submit');
+    nlForm.addEventListener('submit', async(e) => {
+      e.preventDefault();
+      const email = document.getElementById('nl-email').value.trim();
+      const lang = localStorage.getItem('huaxa_lang') || 'zh';
+      if(!email) {
+        nlStatus.textContent = lang==='zh'?'请输入邮箱':lang==='ja'?'メールを入力':'Enter email';
+        nlStatus.className = 'form-status err'; return;
+      }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        nlStatus.textContent = lang==='zh'?'邮箱格式不正确':lang==='ja'?'メール形式が正しくありません':'Invalid email';
+        nlStatus.className = 'form-status err'; return;
+      }
+      nlSubmit.disabled = true;
+      nlStatus.textContent = lang==='zh'?'订阅中…':lang==='ja'?'購読中…':'Subscribing…';
+      nlStatus.className = 'form-status';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email})
         });
-      });
-    }
-
-    /* ════════════════════════════════════════
-       Contact form (POST /api/contact)
-       ════════════════════════════════════════ */
-    const form = document.getElementById('contact-form');
-    if(form){
-      const status = document.getElementById('cf-status');
-      const submitBtn = document.getElementById('cf-submit');
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const payload = {
-          name: form.name.value.trim(),
-          email: form.email.value.trim(),
-          message: form.message.value.trim(),
-        };
-        if(!payload.name || !payload.email || !payload.message){
-          status.textContent = '请把姓名、邮箱和留言都填好。';
-          status.className = 'form-status err';
-          return;
-        }
-        submitBtn.disabled = true;
-        status.textContent = '发送中…';
-        status.className = 'form-status';
-        try{
-          const res = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          const data = await res.json().catch(() => ({}));
-          if(res.ok && data.ok){
-            status.textContent = data.msg || '已收到，我会尽快回复你';
-            status.className = 'form-status ok';
-            form.reset();
-          } else {
-            status.textContent = data.error || '发送失败，请稍后再试。';
-            status.className = 'form-status err';
-          }
-        }catch{
-          status.textContent = '网络错误，请稍后再试。';
-          status.className = 'form-status err';
-        }finally{
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    /* ════════════════════════════════════════
-       Newsletter form (POST /api/subscribe)
-       ════════════════════════════════════════ */
-    const nlForm = document.getElementById('newsletter-form');
-    if(nlForm){
-      const nlStatus = document.getElementById('nl-status');
-      const nlSubmit = document.getElementById('nl-submit');
-      nlForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('nl-email').value.trim();
-        if(!email){
-          nlStatus.textContent = '请输入邮箱地址';
+        const data = await res.json().catch(() => ({}));
+        if(res.ok && data.ok) {
+          nlStatus.textContent = data.msg || (lang==='zh'?'订阅成功！感谢关注 📬':lang==='ja'?'購読完了！ありがとうございます 📬':'Subscribed! Thank you 📬');
+          nlStatus.className = 'form-status ok';
+          nlForm.reset();
+        } else {
+          nlStatus.textContent = data.msg || (lang==='zh'?'订阅失败，请稍后再试':lang==='ja'?'購読失敗':'Subscription failed');
           nlStatus.className = 'form-status err';
-          return;
         }
-        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-          nlStatus.textContent = '邮箱格式不正确';
-          nlStatus.className = 'form-status err';
-          return;
-        }
-        nlSubmit.disabled = true;
-        nlStatus.textContent = '订阅中…';
-        nlStatus.className = 'form-status';
-        try{
-          const res = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
-          });
-          const data = await res.json().catch(() => ({}));
-          if(res.ok && data.ok){
-            nlStatus.textContent = data.msg || '订阅成功！感谢关注 📬';
-            nlStatus.className = 'form-status ok';
-            nlForm.reset();
-          } else {
-            nlStatus.textContent = data.msg || '订阅失败，请稍后再试。';
-            nlStatus.className = 'form-status err';
-          }
-        }catch{
-          nlStatus.textContent = '网络错误，请稍后再试。';
-          nlStatus.className = 'form-status err';
-        }finally{
-          nlSubmit.disabled = false;
-        }
-      });
-    }
-  })();
-  </script>
+      } catch(err) {
+        nlStatus.textContent = lang==='zh'?'网络错误':lang==='ja'?'ネットワークエラー':'Network error';
+        nlStatus.className = 'form-status err';
+      } finally {
+        nlSubmit.disabled = false;
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
